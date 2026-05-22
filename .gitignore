@@ -1,0 +1,26 @@
+# ==========================================
+# Archivos temporales y de importación de Godot
+# ==========================================
+.godot/
+.import/
+
+# ==========================================
+# Configuraciones locales y específicas del usuario
+# ==========================================
+export_presets.cfg
+.mono/
+data_*/
+
+# ==========================================
+# Archivos generados por el sistema operativo
+# ==========================================
+.DS_Store
+Thumbs.db
+*.tmp
+
+# ==========================================
+# Carpetas de exportación (Builds finales)
+# ==========================================
+build/
+dist/
+android/

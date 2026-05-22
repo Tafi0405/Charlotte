@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://c5al5wncvlm8c"]
+
+[ext_resource type="Script" uid="uid://bmpu074062kc7" path="res://charlotte.gd" id="1_uk6mj"]
+[ext_resource type="Texture2D" uid="uid://bsbkosg8urh1y" path="res://Assets/charlotte.png" id="2_m3wfo"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_y8cb7"]
+radius = 53.08484
+
+[node name="Charlotte" type="CharacterBody2D" unique_id=2062713552]
+motion_mode = 1
+script = ExtResource("1_uk6mj")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=759044733]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_m3wfo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=291680470]
+position = Vector2(9, 41)
+shape = SubResource("CircleShape2D_y8cb7")

@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dlqgf853sy0ml"]
+
+[ext_resource type="Texture2D" uid="uid://h6xjte3notaq" path="res://Assets/madera oscura.jpg" id="1_kijln"]
+[ext_resource type="PackedScene" uid="uid://b8ciwep4g21xx" path="res://planta.tscn" id="2_t6b2e"]
+[ext_resource type="PackedScene" uid="uid://c5al5wncvlm8c" path="res://charlotte.tscn" id="3_hc6nc"]
+
+[node name="piso" type="Node2D" unique_id=176481009]
+y_sort_enabled = true
+
+[node name="MaderaOscura" type="Sprite2D" parent="." unique_id=1776987288]
+z_index = -1
+position = Vector2(423, 243)
+scale = Vector2(1.195, 0.995)
+texture = ExtResource("1_kijln")
+
+[node name="Planta" parent="." unique_id=941777200 instance=ExtResource("2_t6b2e")]
+position = Vector2(75, 398)
+
+[node name="Planta2" parent="." unique_id=2128537385 instance=ExtResource("2_t6b2e")]
+position = Vector2(663, 121)
+
+[node name="Planta3" parent="." unique_id=1753354045 instance=ExtResource("2_t6b2e")]
+position = Vector2(202, 111)
+
+[node name="Planta4" parent="." unique_id=1234339538 instance=ExtResource("2_t6b2e")]
+position = Vector2(289, 362)
+
+[node name="Charlotte" parent="." unique_id=2062713552 instance=ExtResource("3_hc6nc")]
+position = Vector2(431, 191)

@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b8ciwep4g21xx"]
+
+[ext_resource type="Texture2D" uid="uid://bs8ymopbvalxi" path="res://Assets/planta.png" id="1_wh65v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jgas5"]
+radius = 195.06407
+
+[node name="Planta" type="StaticBody2D" unique_id=1332340416]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1847088876]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_wh65v")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=969406485]
+position = Vector2(1, 35)
+scale = Vector2(0.2, 0.2)
+shape = SubResource("CircleShape2D_jgas5")
