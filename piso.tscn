@@ -18,11 +18,12 @@ size = Vector2(1, 486)
 
 [node name="piso" type="Node2D" unique_id=176481009]
 y_sort_enabled = true
+position = Vector2(28, -6)
 
 [node name="MaderaOscura" type="Sprite2D" parent="." unique_id=1776987288]
 z_index = -1
-position = Vector2(441, 169.49998)
-scale = Vector2(1.9727892, 1.6639177)
+position = Vector2(441.00003, 167.00002)
+scale = Vector2(3.556, 3)
 texture = ExtResource("1_kijln")
 
 [node name="Planta" parent="." unique_id=941777200 instance=ExtResource("2_t6b2e")]
@@ -41,25 +42,26 @@ position = Vector2(289, 362)
 position = Vector2(431, 191)
 
 [node name="Camera2D" type="Camera2D" parent="Charlotte" unique_id=632743079]
-position = Vector2(8, 9)
+position = Vector2(4, 9)
+zoom = Vector2(0.525, 0.525)
 position_smoothing_enabled = true
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2063163710]
-position = Vector2(-269, -235)
-scale = Vector2(1.665, 1.665)
+[node name="Límites" type="StaticBody2D" parent="." unique_id=2063163710]
+position = Vector2(-834, -572)
+scale = Vector2(3, 3)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=412332739]
-position = Vector2(423, -0.5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Límites" unique_id=412332739]
+position = Vector2(423.00003, -0.5)
 shape = SubResource("RectangleShape2D_kijln")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=795347619]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Límites" unique_id=795347619]
 position = Vector2(424, 484)
 shape = SubResource("RectangleShape2D_t6b2e")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D" unique_id=743173159]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Límites" unique_id=743173159]
 position = Vector2(-16, 242)
 shape = SubResource("RectangleShape2D_hc6nc")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="StaticBody2D" unique_id=1053251669]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Límites" unique_id=1053251669]
 position = Vector2(863, 242)
 shape = SubResource("RectangleShape2D_0g0i5")
