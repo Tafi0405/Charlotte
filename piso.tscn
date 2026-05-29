@@ -21,8 +21,8 @@ y_sort_enabled = true
 
 [node name="MaderaOscura" type="Sprite2D" parent="." unique_id=1776987288]
 z_index = -1
-position = Vector2(423, 243)
-scale = Vector2(1.195, 0.995)
+position = Vector2(441, 169.49998)
+scale = Vector2(1.9727892, 1.6639177)
 texture = ExtResource("1_kijln")
 
 [node name="Planta" parent="." unique_id=941777200 instance=ExtResource("2_t6b2e")]
@@ -40,7 +40,12 @@ position = Vector2(289, 362)
 [node name="Charlotte" parent="." unique_id=2062713552 instance=ExtResource("3_hc6nc")]
 position = Vector2(431, 191)
 
+[node name="Camera2D" type="Camera2D" parent="Charlotte" unique_id=632743079]
+position = Vector2(8, 9)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2063163710]
+position = Vector2(-269, -235)
+scale = Vector2(1.665, 1.665)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=412332739]
 position = Vector2(423, -0.5)
