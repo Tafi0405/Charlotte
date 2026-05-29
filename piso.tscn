@@ -42,6 +42,7 @@ position = Vector2(431, 191)
 
 [node name="Camera2D" type="Camera2D" parent="Charlotte" unique_id=632743079]
 position = Vector2(8, 9)
+position_smoothing_enabled = true
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2063163710]
 position = Vector2(-269, -235)
