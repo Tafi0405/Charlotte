@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://cmoral3tumpmy"]
+
+[ext_resource type="Script" uid="uid://cl16cyikx05vr" path="res://character_body_2d.gd" id="1_ij6vw"]
+[ext_resource type="Texture2D" uid="uid://b0pxtslannela" path="res://Assets/IMG-20260603-WA0011.jpg" id="2_ghijl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_44cfe"]
+radius = 150.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dd465"]
+radius = 400.0
+
+[node name="Enemigo" type="CharacterBody2D" unique_id=323063342]
+script = ExtResource("1_ij6vw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1797510384]
+shape = SubResource("CircleShape2D_44cfe")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1524639762]
+position = Vector2(-0.4999969, 0)
+scale = Vector2(0.24665181, 0.17636988)
+texture = ExtResource("2_ghijl")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=899468592]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1286685887]
+position = Vector2(1, -1)
+shape = SubResource("CircleShape2D_dd465")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
