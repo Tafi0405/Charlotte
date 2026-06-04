@@ -42,6 +42,11 @@ position = Vector2(289, 362)
 
 [node name="Charlotte" parent="." instance=ExtResource("3_hc6nc")]
 position = Vector2(431, 191)
+walk_speed = null
+run_speed = null
+maxHealth = null
+walkHealthInterval = null
+runHealthInterval = null
 
 [node name="Camera2D" type="Camera2D" parent="Charlotte"]
 position = Vector2(4, 9)
