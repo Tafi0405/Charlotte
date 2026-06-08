@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://cr3kgrmpaec6m"]
+
+[ext_resource type="Texture2D" uid="uid://cvwh04nlk3qnf" path="res://Assets/drug.png" id="1_3fcus"]
+[ext_resource type="Script" uid="uid://u6xnsp8bjjyn" path="res://drug.gd" id="1_315i8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_315i8"]
+radius = 43.046486
+
+[node name="Drug" type="Area2D" unique_id=2551841]
+script = ExtResource("1_315i8")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=538609210]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_3fcus")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=156606563]
+shape = SubResource("CircleShape2D_315i8")
