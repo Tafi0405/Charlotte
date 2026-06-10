@@ -1,31 +1,33 @@
-[gd_scene format=3 uid="uid://bfa6kgnx2npom"]
+[gd_scene load_steps=2 format=3 uid="uid://bfa6kgnx2npom"]
 
 [ext_resource type="Script" uid="uid://cmsba3mfoxglh" path="res://menu_pausa.gd" id="1_jd2x8"]
 
-[node name="MenuPausa" type="CanvasLayer" unique_id=553757121]
+[node name="MenuPausa" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_jd2x8")
 
-[node name="Control" type="Control" parent="." unique_id=700719635]
+[node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=125680428]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control"]
 layout_mode = 0
-offset_left = 432.0
-offset_top = 234.0
-offset_right = 518.0
-offset_bottom = 301.0
+offset_left = 308.0
+offset_top = 176.0
+offset_right = 558.0
+offset_bottom = 334.0
 alignment = 1
 
-[node name="BotónContinuar" type="Button" parent="Control/VBoxContainer" unique_id=1789204822]
+[node name="BotónContinuar" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Continuar"
 
-[node name="Button" type="Button" parent="Control/VBoxContainer" unique_id=895750686]
+[node name="Button" type="Button" parent="Control/VBoxContainer"]
 layout_mode = 2
+theme_override_font_sizes/font_size = 50
 text = "Salir"
 
 [connection signal="pressed" from="Control/VBoxContainer/BotónContinuar" to="." method="_on_botón_continuar_pressed"]

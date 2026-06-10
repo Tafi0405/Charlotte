@@ -45,11 +45,6 @@ position = Vector2(289, 362)
 [node name="Charlotte" parent="." instance=ExtResource("3_hc6nc")]
 position = Vector2(431, 191)
 
-[node name="Camera2D" type="Camera2D" parent="Charlotte"]
-position = Vector2(4, 9)
-zoom = Vector2(0.525, 0.525)
-position_smoothing_enabled = true
-
 [node name="Límites" type="StaticBody2D" parent="."]
 position = Vector2(-834, -572)
 scale = Vector2(3, 3)
