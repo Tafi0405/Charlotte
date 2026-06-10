@@ -2,7 +2,7 @@ extends Area2D
 
 @export var healAmount: int = 10
 
-@export var toxicAmount: int = 5
+@export var toxicAmount: int = 10
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

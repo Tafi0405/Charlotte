@@ -9,7 +9,7 @@ var currentHealth: int
 @export var maxToxicity: int = 100
 var currentToxicity: float = 0
 
-@export var toxicityDecayRange: float = 1.0
+var toxicityTimer: float = 0.0
 
 # Tiempo necesario para perder 1 punto de salud
 @export var walk_health_interval: float = 5.0
@@ -68,9 +68,17 @@ func _physics_process(delta: float) -> void:
 			if currentHealth <= 0:
 				die()
 	if currentToxicity > 0:
-			currentToxicity -= toxicityDecayRange * delta
-			currentToxicity = max(currentToxicity, 0)
-			toxicityChange.emit()
+			toxicityTimer += delta
+			
+			if toxicityTimer >= 600.0:
+				toxicityTimer = 0.0
+				currentToxicity -= 1
+				
+				if currentToxicity < 0:
+					
+					currentToxicity = 0
+				
+				toxicityChange.emit()
 
 func add_toxicity(amount: float):
 	currentToxicity = min(currentToxicity + amount, maxToxicity)
