@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://dlqgf853sy0ml"]
+[gd_scene format=3 uid="uid://dlqgf853sy0ml"]
 
 [ext_resource type="Texture2D" uid="uid://h6xjte3notaq" path="res://Assets/madera oscura.jpg" id="1_kijln"]
 [ext_resource type="PackedScene" uid="uid://b8ciwep4g21xx" path="res://planta.tscn" id="2_t6b2e"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bcejren7mmegs" path="res://sanity.gd" id="5_hc6nc"]
 [ext_resource type="PackedScene" uid="uid://cr3kgrmpaec6m" path="res://drug.tscn" id="6_0g0i5"]
 [ext_resource type="Script" uid="uid://dleibv5c5cw28" path="res://toxic.gd" id="6_18jpq"]
+[ext_resource type="PackedScene" uid="uid://bfa6kgnx2npom" path="res://menu_pausa.tscn" id="8_85bst"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kijln"]
 size = Vector2(878, 1)
@@ -20,62 +21,62 @@ size = Vector2(1, 486)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0g0i5"]
 size = Vector2(1, 486)
 
-[node name="piso" type="Node2D"]
+[node name="piso" type="Node2D" unique_id=1315715198]
 y_sort_enabled = true
 position = Vector2(28, -6)
 
-[node name="MaderaOscura" type="Sprite2D" parent="."]
+[node name="MaderaOscura" type="Sprite2D" parent="." unique_id=512263331]
 z_index = -1
 position = Vector2(441.00003, 167.00002)
 scale = Vector2(3.556, 3)
 texture = ExtResource("1_kijln")
 
-[node name="Planta" parent="." instance=ExtResource("2_t6b2e")]
+[node name="Planta" parent="." unique_id=1968055637 instance=ExtResource("2_t6b2e")]
 position = Vector2(75, 398)
 
-[node name="Planta2" parent="." instance=ExtResource("2_t6b2e")]
+[node name="Planta2" parent="." unique_id=230530528 instance=ExtResource("2_t6b2e")]
 position = Vector2(663, 121)
 
-[node name="Planta3" parent="." instance=ExtResource("2_t6b2e")]
+[node name="Planta3" parent="." unique_id=2083795615 instance=ExtResource("2_t6b2e")]
 position = Vector2(202, 111)
 
-[node name="Planta4" parent="." instance=ExtResource("2_t6b2e")]
+[node name="Planta4" parent="." unique_id=1196163658 instance=ExtResource("2_t6b2e")]
 position = Vector2(289, 362)
 
-[node name="Charlotte" parent="." instance=ExtResource("3_hc6nc")]
+[node name="Charlotte" parent="." unique_id=651545189 instance=ExtResource("3_hc6nc")]
 position = Vector2(431, 191)
 
-[node name="Camera2D" type="Camera2D" parent="Charlotte"]
+[node name="Camera2D" type="Camera2D" parent="Charlotte" unique_id=1111855612]
 position = Vector2(4, 9)
 zoom = Vector2(0.525, 0.525)
 position_smoothing_enabled = true
 
-[node name="Límites" type="StaticBody2D" parent="."]
+[node name="Límites" type="StaticBody2D" parent="." unique_id=16439234]
 position = Vector2(-834, -572)
 scale = Vector2(3, 3)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Límites"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Límites" unique_id=901881353]
 position = Vector2(423.00003, -0.5)
 shape = SubResource("RectangleShape2D_kijln")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Límites"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Límites" unique_id=330151198]
 position = Vector2(424, 484)
 shape = SubResource("RectangleShape2D_t6b2e")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Límites"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Límites" unique_id=572971835]
 position = Vector2(-16, 242)
 shape = SubResource("RectangleShape2D_hc6nc")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Límites"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Límites" unique_id=197347987]
 position = Vector2(863, 242)
 shape = SubResource("RectangleShape2D_0g0i5")
 
-[node name="Enemigo" parent="." instance=ExtResource("4_t6b2e")]
+[node name="Enemigo" parent="." unique_id=575139256 instance=ExtResource("4_t6b2e")]
 position = Vector2(1525, -361)
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2071225523]
 
-[node name="Sanity" type="Label" parent="CanvasLayer"]
+[node name="Sanity" type="Label" parent="CanvasLayer" unique_id=862367031]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -85,7 +86,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 50
 text = "Sanity:"
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Sanity"]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Sanity" unique_id=614416721]
 layout_mode = 0
 offset_left = 178.0
 offset_right = 438.0
@@ -96,7 +97,7 @@ theme_override_font_sizes/font_size = 50
 value = 100.0
 script = ExtResource("5_hc6nc")
 
-[node name="Toxic" type="Label" parent="CanvasLayer"]
+[node name="Toxic" type="Label" parent="CanvasLayer" unique_id=1060991427]
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
@@ -107,7 +108,7 @@ grow_vertical = 0
 theme_override_font_sizes/font_size = 44
 text = "Toxic:"
 
-[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Toxic"]
+[node name="ProgressBar" type="ProgressBar" parent="CanvasLayer/Toxic" unique_id=1026488509]
 layout_mode = 0
 offset_left = 128.0
 offset_top = 2.0
@@ -116,17 +117,19 @@ offset_bottom = 61.0
 theme_override_font_sizes/font_size = 40
 script = ExtResource("6_18jpq")
 
-[node name="Drug" parent="." instance=ExtResource("6_0g0i5")]
+[node name="Drug" parent="." unique_id=1703831560 instance=ExtResource("6_0g0i5")]
 position = Vector2(664, 405)
 
-[node name="Drug2" parent="." instance=ExtResource("6_0g0i5")]
+[node name="Drug2" parent="." unique_id=565282421 instance=ExtResource("6_0g0i5")]
 position = Vector2(874, 298)
 
-[node name="Drug3" parent="." instance=ExtResource("6_0g0i5")]
+[node name="Drug3" parent="." unique_id=920946216 instance=ExtResource("6_0g0i5")]
 position = Vector2(1106, 437)
 
-[node name="Drug4" parent="." instance=ExtResource("6_0g0i5")]
+[node name="Drug4" parent="." unique_id=112597764 instance=ExtResource("6_0g0i5")]
 position = Vector2(872, 587)
 
-[node name="Drug5" parent="." instance=ExtResource("6_0g0i5")]
+[node name="Drug5" parent="." unique_id=1976664896 instance=ExtResource("6_0g0i5")]
 position = Vector2(598, 613)
+
+[node name="MenuPausa" parent="." unique_id=553757121 instance=ExtResource("8_85bst")]

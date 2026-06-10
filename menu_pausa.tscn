@@ -1,0 +1,31 @@
+[gd_scene format=3 uid="uid://bfa6kgnx2npom"]
+
+[ext_resource type="Script" uid="uid://cmsba3mfoxglh" path="res://menu_pausa.gd" id="1_jd2x8"]
+
+[node name="MenuPausa" type="CanvasLayer" unique_id=553757121]
+process_mode = 3
+script = ExtResource("1_jd2x8")
+
+[node name="Control" type="Control" parent="." unique_id=700719635]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control" unique_id=125680428]
+layout_mode = 0
+offset_left = 432.0
+offset_top = 234.0
+offset_right = 518.0
+offset_bottom = 301.0
+alignment = 1
+
+[node name="BotónContinuar" type="Button" parent="Control/VBoxContainer" unique_id=1789204822]
+layout_mode = 2
+text = "Continuar"
+
+[node name="Button" type="Button" parent="Control/VBoxContainer" unique_id=895750686]
+layout_mode = 2
+text = "Salir"
+
+[connection signal="pressed" from="Control/VBoxContainer/BotónContinuar" to="." method="_on_botón_continuar_pressed"]
