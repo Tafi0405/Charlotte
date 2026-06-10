@@ -1,11 +1,46 @@
-[gd_scene format=3 uid="uid://cwpmxm2uj3fpj"]
+[gd_scene load_steps=3 format=3 uid="uid://cwpmxm2uj3fpj"]
+
+[ext_resource type="Script" uid="uid://dleibv5c5cw28" path="res://toxic.gd" id="1_6lon5"]
+[ext_resource type="Script" uid="uid://bcejren7mmegs" path="res://sanity.gd" id="2_q8o8l"]
 
 [node name="GUI" type="CanvasLayer"]
 
-[node name="Label" type="Label" parent="."]
-offset_left = 1.0
-offset_top = 430.0
-offset_right = 210.0
-offset_bottom = 485.0
+[node name="Toxic" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -125.0
+offset_right = 133.0
+offset_bottom = -64.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 44
+text = "Toxic: "
+
+[node name="ProgressBar" type="ProgressBar" parent="Toxic"]
+layout_mode = 0
+offset_left = 131.0
+offset_top = 5.0
+offset_right = 419.0
+offset_bottom = 64.0
 theme_override_font_sizes/font_size = 40
-text = "Sanity: 100"
+script = ExtResource("1_6lon5")
+
+[node name="Sanity" type="Label" parent="."]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -23.0
+offset_right = 57.0
+grow_vertical = 0
+theme_override_font_sizes/font_size = 50
+text = "Sanity: "
+
+[node name="ProgressBar" type="ProgressBar" parent="Sanity"]
+layout_mode = 0
+offset_left = 162.0
+offset_top = 10.0
+offset_right = 419.0
+offset_bottom = 69.0
+theme_override_font_sizes/font_size = 40
+value = 100.0
+script = ExtResource("2_q8o8l")
