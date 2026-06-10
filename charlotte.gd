@@ -6,6 +6,11 @@ extends CharacterBody2D
 @export var maxHealth: int = 100
 var currentHealth: int
 
+@export var maxToxicity: int = 100
+var currentToxicity: float = 0
+
+@export var toxicityDecayRange: float = 1.0
+
 # Tiempo necesario para perder 1 punto de salud
 @export var walk_health_interval: float = 5.0
 @export var run_health_interval: float = 2.5
@@ -13,10 +18,12 @@ var currentHealth: int
 var healthTimer: float = 0.0
 
 signal healthChange
+signal toxicityChange
 
 func _ready():
 	add_to_group("player")
 	currentHealth = maxHealth
+	currentToxicity = 0
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
@@ -60,6 +67,14 @@ func _physics_process(delta: float) -> void:
 			
 			if currentHealth <= 0:
 				die()
+	if currentToxicity > 0:
+			currentToxicity -= toxicityDecayRange * delta
+			currentToxicity = max(currentToxicity, 0)
+			toxicityChange.emit()
+
+func add_toxicity(amount: float):
+	currentToxicity = min(currentToxicity + amount, maxToxicity)
+	toxicityChange.emit()
 
 func die():
 	print("Charlotte descendió a la locura...")
