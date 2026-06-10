@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://ducfxalyslql3"]
+
+[ext_resource type="Texture2D" uid="uid://c03sjgq7ttvrv" path="res://Assets/PuffLand.png" id="1_45wdl"]
+[ext_resource type="PackedScene" uid="uid://c5al5wncvlm8c" path="res://charlotte.tscn" id="2_r8le1"]
+[ext_resource type="PackedScene" uid="uid://bfa6kgnx2npom" path="res://menu_pausa.tscn" id="3_f3lwf"]
+[ext_resource type="PackedScene" uid="uid://cwpmxm2uj3fpj" path="res://gui.tscn" id="4_8j65d"]
+
+[node name="Pafu" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(8.255, 8.255)
+texture = ExtResource("1_45wdl")
+
+[node name="Charlotte" parent="." instance=ExtResource("2_r8le1")]
+position = Vector2(190, 3379)
+
+[node name="Camera2D" type="Camera2D" parent="Charlotte"]
+zoom = Vector2(0.385, 0.385)
+limit_enabled = false
+
+[node name="MenuPausa" parent="." instance=ExtResource("3_f3lwf")]
+
+[node name="GUI" parent="." instance=ExtResource("4_8j65d")]
