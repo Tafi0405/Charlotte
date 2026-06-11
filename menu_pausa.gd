@@ -15,18 +15,15 @@ func toggle_pausa():
 	# Muestra u oculta el menú según el estado de la pausa
 	visible = get_tree().paused
 
-# Esto se ejecutará al pulsar el botón Continuar
-func _on_boton_continuar_pressed():
+# Conecta la señal "pressed" de tu botón Continuar a esta función
+func _on_botón_continuar_pressed() -> void:
 	toggle_pausa()
 
-# Esto se ejecutará al pulsar el botón Salir
-func _on_boton_salir_pressed():
-	get_tree().quit() # Cierra el juego por completo
-
-
-func _on_botón_continuar_pressed() -> void:
-	pass # Replace with function body.
-
-
+# Conecta la señal "pressed" de tu botón Salir a esta función
 func _on_botón_salir_pressed() -> void:
+	print("El botón de salir funciona, intentando cerrar...")
+	get_tree().quit()
+
+
+func _on_button_pressed() -> void:
 	pass # Replace with function body.
