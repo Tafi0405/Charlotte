@@ -1,5 +1,7 @@
 extends Area2D
 
+@onready var enemy = get_tree().get_first_node_in_group("enemy")
+
 @export var healAmount: int = 10
 
 @export var toxicAmount: int = 10
@@ -10,8 +12,10 @@ func _ready() -> void:
 
 
 func _on_body_entered(body):
-	if body.is_in_group("player"):
-		body.currentHealth = min (body.currentHealth + healAmount, body.maxHealth)
+	if !body.is_in_group("player"):
+		return
+		
+	body.currentHealth = min (body.currentHealth + healAmount, body.maxHealth)
 	
 	body.add_toxicity(toxicAmount)
 	

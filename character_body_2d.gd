@@ -4,6 +4,9 @@ var Charlotte = null
 var move = Vector2.ZERO
 @export var vel = 150 # Es buena práctica usar @export para ajustar la velocidad desde el editor
 
+func _ready():
+	add_to_group("enemy")
+
 func _physics_process(delta: float) -> void:
 	move = Vector2.ZERO
 	

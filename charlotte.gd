@@ -83,7 +83,13 @@ func _physics_process(delta: float) -> void:
 func add_toxicity(amount: float):
 	currentToxicity = min(currentToxicity + amount, maxToxicity)
 	toxicityChange.emit()
+	
+	if currentToxicity >= maxToxicity:
+		overDose()
 
 func die():
 	print("Charlotte descendió a la locura...")
-	queue_free()
+
+func overDose():
+	print("Charlotte sufrió una sobredosis")
+	get_tree().quit()
