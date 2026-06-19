@@ -20,6 +20,12 @@ offset_right = 558.0
 offset_bottom = 334.0
 alignment = 1
 
+[node name="Label" type="Label" parent="Control/VBoxContainer" unique_id=592339510]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Pausa"
+horizontal_alignment = 1
+
 [node name="BotónContinuar" type="Button" parent="Control/VBoxContainer" unique_id=1113916955]
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
