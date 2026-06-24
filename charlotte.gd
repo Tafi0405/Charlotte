@@ -24,6 +24,9 @@ func _ready():
 	add_to_group("player")
 	currentHealth = maxHealth
 	currentToxicity = 0
+	
+	currentHealth = PlayerData.health
+	currentToxicity = PlayerData.toxicity
 
 func _physics_process(delta: float) -> void:
 	var direction = Vector2.ZERO
@@ -93,3 +96,7 @@ func die():
 func overDose():
 	print("Charlotte sufrió una sobredosis")
 	get_tree().quit()
+
+func save_data():
+	PlayerData.health = currentHealth
+	PlayerData.toxicity = currentToxicity
