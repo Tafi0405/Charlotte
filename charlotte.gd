@@ -7,7 +7,7 @@ extends CharacterBody2D
 var currentHealth: int
 
 @export var maxToxicity: int = 100
-var currentToxicity: int = 0
+var currentToxicity: float = 0
 
 var toxicityTimer: float = 0.0
 
