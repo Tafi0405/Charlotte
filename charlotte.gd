@@ -100,3 +100,9 @@ func overDose():
 func save_data():
 	PlayerData.health = currentHealth
 	PlayerData.toxicity = currentToxicity
+
+
+
+
+func _on_teleporter_body_entere(body: Node2D) -> void:
+	pass # Replace with function body.
