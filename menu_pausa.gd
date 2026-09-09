@@ -21,9 +21,5 @@ func _on_botón_continuar_pressed() -> void:
 
 # Conecta la señal "pressed" de tu botón Salir a esta función
 func _on_botón_salir_pressed() -> void:
-	print("El botón de salir funciona, intentando cerrar...")
-	get_tree().quit()
-
-
-func _on_button_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://Menu_principal.tscn")
