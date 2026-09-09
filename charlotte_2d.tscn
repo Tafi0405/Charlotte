@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://sfysdil43xel"]
+
+[ext_resource type="Texture2D" uid="uid://bsbkosg8urh1y" path="res://Assets/charlotte.png" id="1_kyxga"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dpjle"]
+radius = 50.0
+height = 204.0
+
+[node name="Charlotte2D" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-0.59999084, 0.6000061)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_kyxga")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(6, -6)
+shape = SubResource("CapsuleShape2D_dpjle")
