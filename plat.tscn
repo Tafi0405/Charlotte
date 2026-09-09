@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://dgkqxj7qy6sci"]
+
+[ext_resource type="Texture2D" uid="uid://h6xjte3notaq" path="res://Assets/madera oscura.jpg" id="1_47gav"]
+[ext_resource type="PackedScene" uid="uid://sfysdil43xel" path="res://charlotte_2d.tscn" id="2_uaiq1"]
+
+[node name="Plat" type="Node2D"]
+
+[node name="Charlotte2D" parent="." instance=ExtResource("2_uaiq1")]
+position = Vector2(432, 251)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(432.99994, 240)
+scale = Vector2(-2760.3936, -86.79554)
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+position = Vector2(628, 477.00003)
+scale = Vector2(2.3673472, 0.17938147)
+texture = ExtResource("1_47gav")
