@@ -1,0 +1,56 @@
+[gd_scene format=3 uid="uid://cp3hjke5hrgth"]
+
+[node name="mapa_mundo" type="Control" unique_id=787848608]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="fondo_mapa_mundo" type="ColorRect" parent="." unique_id=1195909425]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="mapa_mundo_sprite" type="CanvasLayer" parent="fondo_mapa_mundo" unique_id=1219450571]
+
+[node name="nivel1" type="TextureButton" parent="fondo_mapa_mundo/mapa_mundo_sprite" unique_id=1579940777]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="nivel2" type="TextureButton" parent="fondo_mapa_mundo/mapa_mundo_sprite" unique_id=1928386223]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="nivel3" type="TextureButton" parent="fondo_mapa_mundo/mapa_mundo_sprite" unique_id=1275873256]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="nivel4" type="TextureButton" parent="fondo_mapa_mundo/mapa_mundo_sprite" unique_id=2042944931]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="nivel5" type="TextureButton" parent="fondo_mapa_mundo/mapa_mundo_sprite" unique_id=476809547]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="nivel6" type="TextureButton" parent="fondo_mapa_mundo/mapa_mundo_sprite" unique_id=2125190018]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="nivel7" type="TextureButton" parent="fondo_mapa_mundo/mapa_mundo_sprite" unique_id=1194287805]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="nivel8" type="TextureButton" parent="fondo_mapa_mundo/mapa_mundo_sprite" unique_id=2141879826]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="nivel9" type="TextureButton" parent="fondo_mapa_mundo/mapa_mundo_sprite" unique_id=725439355]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="nivel10" type="TextureButton" parent="fondo_mapa_mundo/mapa_mundo_sprite" unique_id=526768782]
+offset_right = 40.0
+offset_bottom = 40.0
