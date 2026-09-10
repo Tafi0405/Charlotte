@@ -1,12 +1,15 @@
 [gd_scene format=3 uid="uid://crr02r2cqmepw"]
 
-[node name="Control" type="Control" unique_id=489712532]
+[ext_resource type="Script" uid="uid://ftnjhejclgip" path="res://blue.gd" id="1_lj7jy"]
+
+[node name="blue" type="Control" unique_id=489712532]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_lj7jy")
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=2108638362]
 layout_mode = 1
@@ -15,4 +18,45 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.26666668, 0, 1, 1)
+color = Color(0, 0, 1, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect" unique_id=1533598657]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.29218107
+anchor_right = 0.4814815
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="BNivel 1" type="Button" parent="ColorRect/VBoxContainer" unique_id=64414963]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "NIVEL 1"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="ColorRect" unique_id=1574344912]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 142.0
+offset_right = 863.0
+offset_bottom = 488.0
+
+[node name="BNivel 2" type="Button" parent="ColorRect/VBoxContainer2" unique_id=268620089]
+layout_mode = 2
+theme_override_font_sizes/font_size = 25
+text = "NIVEL 2"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=734150426]
+layout_mode = 0
+offset_right = 864.0
+offset_bottom = 138.0
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=347034100]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "SELECCION DE NIVEL"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/BNivel 1" to="." method="_on_BNivel1_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer2/BNivel 2" to="." method="_on_BNivel2_pressed"]
