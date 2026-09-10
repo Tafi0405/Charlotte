@@ -3,9 +3,8 @@
 [ext_resource type="Script" uid="uid://fj04ty5wdh7f" path="res://charlotte_2d.gd" id="1_dpjle"]
 [ext_resource type="Texture2D" uid="uid://bsbkosg8urh1y" path="res://Assets/charlotte.png" id="1_kyxga"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dpjle"]
-radius = 50.0
-height = 204.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dpjle"]
+size = Vector2(99, 202)
 
 [node name="Charlotte2D" type="CharacterBody2D"]
 script = ExtResource("1_dpjle")
@@ -16,5 +15,5 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_kyxga")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(6, -6)
-shape = SubResource("CapsuleShape2D_dpjle")
+position = Vector2(7.5, -5)
+shape = SubResource("RectangleShape2D_dpjle")
