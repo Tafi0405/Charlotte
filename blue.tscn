@@ -2,6 +2,27 @@
 
 [ext_resource type="Script" uid="uid://ftnjhejclgip" path="res://blue.gd" id="1_lj7jy"]
 
+[sub_resource type="FontFile" id="FontFile_lj7jy"]
+cache/0/variation_coordinates = {}
+cache/0/face_index = 0
+cache/0/embolden = 0.0
+cache/0/transform = Transform2D(1, 0, 0, 1, 0, 0)
+cache/0/spacing_top = 0
+cache/0/spacing_bottom = 0
+cache/0/spacing_space = 0
+cache/0/spacing_glyph = 0
+cache/0/baseline_offset = 0.0
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/25/0/ascent = 0.0
+cache/0/25/0/descent = 0.0
+cache/0/25/0/underline_position = 0.0
+cache/0/25/0/underline_thickness = 0.0
+cache/0/25/0/scale = 1.0
+
 [node name="blue" type="Control" unique_id=489712532]
 layout_mode = 3
 anchors_preset = 15
@@ -24,7 +45,7 @@ color = Color(0, 0, 1, 1)
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.29218107
-anchor_right = 0.4814815
+anchor_right = 0.4849537
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -40,7 +61,7 @@ layout_mode = 0
 offset_left = 418.0
 offset_top = 142.0
 offset_right = 863.0
-offset_bottom = 488.0
+offset_bottom = 445.0
 
 [node name="BNivel 2" type="Button" parent="ColorRect/VBoxContainer2" unique_id=268620089]
 layout_mode = 2
@@ -58,5 +79,19 @@ theme_override_font_sizes/font_size = 50
 text = "SELECCION DE NIVEL"
 horizontal_alignment = 1
 
+[node name="VBoxContainer2" type="VBoxContainer" parent="." unique_id=1529182298]
+layout_mode = 0
+offset_left = 418.0
+offset_top = 445.0
+offset_right = 864.0
+offset_bottom = 487.0
+
+[node name="BAtras" type="Button" parent="VBoxContainer2" unique_id=1048065917]
+layout_mode = 2
+theme_override_fonts/font = SubResource("FontFile_lj7jy")
+theme_override_font_sizes/font_size = 25
+text = "ATRAS"
+
 [connection signal="pressed" from="ColorRect/VBoxContainer/BNivel 1" to="." method="_on_BNivel1_pressed"]
 [connection signal="pressed" from="ColorRect/VBoxContainer2/BNivel 2" to="." method="_on_BNivel2_pressed"]
+[connection signal="pressed" from="VBoxContainer2/BAtras" to="." method="_on_b_atras_pressed"]
