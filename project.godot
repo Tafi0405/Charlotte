@@ -15,13 +15,8 @@ compatibility/default_parent_skeleton_in_mesh_instance_3d=true
 [application]
 
 config/name="charlotte"
-<<<<<<< HEAD
 run/main_scene="uid://dlqgf853sy0ml"
 config/features=PackedStringArray("4.7", "Forward Plus")
-=======
-run/main_scene="uid://c7kw10xal687q"
-config/features=PackedStringArray("4.6", "Forward Plus")
->>>>>>> 8cd66c90b466dcd433e88cc941e79ee8aaafdec6
 config/icon="res://icon.svg"
 
 [autoload]
