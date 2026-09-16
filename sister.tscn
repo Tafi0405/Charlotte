@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://gfykbob8jr7v"]
+
+[ext_resource type="Texture2D" uid="uid://cqg8t7cojjnyf" path="res://Assets/Almohadon principal.png" id="1_ciucn"]
+[ext_resource type="PackedScene" uid="uid://c5al5wncvlm8c" path="res://charlotte.tscn" id="2_ayafv"]
+[ext_resource type="PackedScene" uid="uid://bbed2tthp2imt" path="res://trophy.tscn" id="3_ayafv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wj77v"]
+radius = 46.818798
+
+[node name="Node2D" type="Node2D"]
+
+[node name="AlmohadonPrincipal" type="Sprite2D" parent="."]
+position = Vector2(1466.0001, 965)
+scale = Vector2(6.143, 4.982)
+texture = ExtResource("1_ciucn")
+
+[node name="Charlotte" parent="." instance=ExtResource("2_ayafv")]
+position = Vector2(671, 690)
+
+[node name="Camera2D" type="Camera2D" parent="Charlotte"]
+zoom = Vector2(0.4, 0.4)
+
+[node name="Area2D" type="Area2D" parent="Charlotte"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Charlotte/Area2D"]
+position = Vector2(0, -63)
+shape = SubResource("CircleShape2D_wj77v")
+
+[node name="RigidBody2D" parent="." instance=ExtResource("3_ayafv")]
+position = Vector2(1002, 747)
