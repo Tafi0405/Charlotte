@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://bbed2tthp2imt"]
+[gd_scene format=3 uid="uid://bbed2tthp2imt"]
 
 [ext_resource type="Script" uid="uid://dxn6gp8pk4qeh" path="res://trophy.gd" id="1_uxowg"]
 [ext_resource type="Texture2D" uid="uid://bygbe2g6vigtv" path="res://Assets/trofeofeo.png" id="2_qntm3"]

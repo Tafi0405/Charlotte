@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://gfykbob8jr7v"]
+[gd_scene format=3 uid="uid://gfykbob8jr7v"]
 
 [ext_resource type="Texture2D" uid="uid://cqg8t7cojjnyf" path="res://Assets/Almohadon principal.png" id="1_ciucn"]
 [ext_resource type="PackedScene" uid="uid://c5al5wncvlm8c" path="res://charlotte.tscn" id="2_ayafv"]
