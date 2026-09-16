@@ -2,9 +2,14 @@
 
 [ext_resource type="Script" uid="uid://2kepn7h5jun3" path="res://menu_principal.gd" id="1_52w07"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7lsrv"]
-bg_color = Color(1, 1, 1, 1)
-border_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_52w07"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f5lth"]
+bg_color = Color(1, 1, 1, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_40ble"]
+bg_color = Color(1, 1, 1, 0)
 
 [node name="Menu" type="Control" unique_id=1871582666]
 layout_mode = 3
@@ -40,13 +45,15 @@ layout_mode = 2
 size_flags_horizontal = 4
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
-text = "MENU PRINCIPAL"
+text = "CHARLOTTE"
+horizontal_alignment = 1
 
 [node name="Bjugar" type="Button" parent="ColorRect/VBoxContainer" unique_id=576139638]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
-theme_override_styles/pressed_mirrored = SubResource("StyleBoxFlat_7lsrv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_52w07")
+toggle_mode = true
 text = "JUGAR"
 
 [node name="BConfigurar" type="Button" parent="ColorRect/VBoxContainer" unique_id=279525325]
@@ -54,12 +61,14 @@ modulate = Color(0, 0, 0, 1)
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_f5lth")
 text = "CONFIGURACION"
 
 [node name="Bsalir" type="Button" parent="ColorRect/VBoxContainer" unique_id=477551765]
 self_modulate = Color(0, 0, 0, 1)
 layout_mode = 2
 theme_override_font_sizes/font_size = 50
+theme_override_styles/hover = SubResource("StyleBoxFlat_40ble")
 text = "SALIR"
 
 [connection signal="pressed" from="ColorRect/VBoxContainer/Bjugar" to="." method="_on_bjugar_pressed"]
