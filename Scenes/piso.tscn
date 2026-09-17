@@ -104,5 +104,5 @@ next_scene_path = "res://Scenes/pafu.tscn"
 position = Vector2(-830, -518)
 shape = SubResource("RectangleShape2D_ajvis")
 
-[node name="Node2D" parent="." unique_id=2046912916 groups=["npc"] instance=ExtResource("9_ajvis")]
+[node name="Node2D" parent="." unique_id=2046912916 instance=ExtResource("9_ajvis")]
 position = Vector2(-218, -82)

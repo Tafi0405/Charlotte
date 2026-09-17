@@ -1,39 +1,41 @@
-extends StaticBody2D  # <- Asegúrate de que esta línea esté así
+extends StaticBody2D
 
 var player_in_range: bool = false
 var in_conversation: bool = false
 
+# Referencia al nodo Label que acabas de crear
+@onready var texto_flotante = $Label
+
+func _ready() -> void:
+	# Ocultamos el texto al iniciar el juego
+	texto_flotante.hide()
+
 func _on_interaction_area_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_range = true
-		print("[NPC]: Charlotte está cerca.")
+		texto_flotante.text = "Presiona 'E' para hablar"
+		texto_flotante.show()
 
 func _on_interaction_area_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		player_in_range = false
 		in_conversation = false
-		print("[NPC]: Charlotte se alejó.")
+		texto_flotante.hide()
 
-# ESTA ES LA FUNCIÓN QUE CHARLOTTE BUSCABA:
 func interactuar_con_npc() -> void:
 	if not in_conversation:
 		in_conversation = true
-		print("\n--- CONVERSACIÓN INICIADA ---")
-		print("NPC: ¡Hola Charlotte! ¿Buscas algo?")
-		print("Presiona [1] para responder | Presiona [2] para alejarte")
-	else:
-		print("NPC: Sigo esperando tu respuesta...")
+		# Usamos \n para hacer un salto de línea
+		texto_flotante.text = "¡Hola Charlotte! ¿Buscas algo?\n[1] Ayuda   [2] Irme"
+		texto_flotante.show()
 
 func responder(opcion: int) -> void:
 	if not in_conversation:
 		return
 		
 	if opcion == 1:
-		print("\nCharlotte: Necesito ayuda...")
-		print("NPC: Entendido, aquí tienes.")
+		texto_flotante.text = "Entendido, aquí tienes."
 	elif opcion == 2:
-		print("\nCharlotte: No tengo tiempo para esto.")
-		print("NPC: Entiendo, cuídate.")
+		texto_flotante.text = "Entiendo, cuídate."
 	
 	in_conversation = false
-	print("--- CONVERSACIÓN FINALIZADA ---")

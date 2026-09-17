@@ -23,3 +23,12 @@ shape = SubResource("RectangleShape2D_gnt6e")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInteraccion" unique_id=1001783312]
 shape = SubResource("CircleShape2D_31y6r")
+
+[node name="Label" type="Label" parent="." unique_id=1985225178]
+offset_left = -37.0
+offset_top = -94.0
+offset_right = 90.0
+offset_bottom = -71.0
+theme_override_font_sizes/font_size = 35
+text = "Texto de prueba"
+horizontal_alignment = 1
