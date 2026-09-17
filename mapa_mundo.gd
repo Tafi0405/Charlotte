@@ -1,12 +1,18 @@
 extends Control
-# pantalla es x=864 y=486
-
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
 
-	pass
+func _on_tb_niv_1_pressed() -> void:
+	get_tree().change_scene_to_file("")
+
+func _on_tb_niv_2_pressed() -> void:
+	get_tree().change_scene_to_file("")
+
+func _on_tb_niv_3_pressed() -> void:
+	get_tree().change_scene_to_file("")
+
+func _on_tb_niv_4_pressed() -> void:
+	get_tree().change_scene_to_file("")
+
+func _on_b_atras_pressed() -> void:
+	get_tree().change_scene_to_file("res://menu_principal.tscn")
