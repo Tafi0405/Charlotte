@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dlqgf853sy0ml"]
+[gd_scene format=3 uid="uid://dlqgf853sy0ml"]
 
 [ext_resource type="Texture2D" uid="uid://h6xjte3notaq" path="res://Assets/madera oscura.jpg" id="1_kijln"]
 [ext_resource type="PackedScene" uid="uid://b8ciwep4g21xx" path="res://planta.tscn" id="2_t6b2e"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cwpmxm2uj3fpj" path="res://gui.tscn" id="7_18jpq"]
 [ext_resource type="PackedScene" uid="uid://bfa6kgnx2npom" path="res://menu_pausa.tscn" id="8_85bst"]
 [ext_resource type="Script" uid="uid://b4mly0aq3lwt0" path="res://Scenes/SceneChange.gd" id="8_lhw8i"]
+[ext_resource type="PackedScene" uid="uid://cbkqehoptonsh" path="res://NPC1.tscn" id="9_ajvis"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kijln"]
 size = Vector2(878, 1)
@@ -24,81 +25,84 @@ size = Vector2(1, 486)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ajvis"]
 size = Vector2(99, 113)
 
-[node name="piso" type="Node2D"]
+[node name="piso" type="Node2D" unique_id=1387193]
 y_sort_enabled = true
 position = Vector2(28, -6)
 
-[node name="MaderaOscura" type="Sprite2D" parent="."]
+[node name="MaderaOscura" type="Sprite2D" parent="." unique_id=607862265]
 z_index = -1
 position = Vector2(441.00003, 167.00002)
 scale = Vector2(3.556, 3)
 texture = ExtResource("1_kijln")
 
-[node name="Planta" parent="." instance=ExtResource("2_t6b2e")]
+[node name="Planta" parent="." unique_id=602676518 instance=ExtResource("2_t6b2e")]
 position = Vector2(75, 398)
 
-[node name="Planta2" parent="." instance=ExtResource("2_t6b2e")]
+[node name="Planta2" parent="." unique_id=752200245 instance=ExtResource("2_t6b2e")]
 position = Vector2(663, 121)
 
-[node name="Planta3" parent="." instance=ExtResource("2_t6b2e")]
+[node name="Planta3" parent="." unique_id=254576985 instance=ExtResource("2_t6b2e")]
 position = Vector2(202, 111)
 
-[node name="Planta4" parent="." instance=ExtResource("2_t6b2e")]
+[node name="Planta4" parent="." unique_id=819015208 instance=ExtResource("2_t6b2e")]
 position = Vector2(289, 362)
 
-[node name="Charlotte" parent="." instance=ExtResource("3_hc6nc")]
+[node name="Charlotte" parent="." unique_id=1384209328 instance=ExtResource("3_hc6nc")]
 position = Vector2(431, 191)
 
-[node name="Camera2D2" type="Camera2D" parent="Charlotte"]
+[node name="Camera2D2" type="Camera2D" parent="Charlotte" unique_id=1191069986]
 zoom = Vector2(0.5, 0.5)
 limit_enabled = false
 
-[node name="Límites" type="StaticBody2D" parent="."]
+[node name="Límites" type="StaticBody2D" parent="." unique_id=283111878]
 position = Vector2(-834, -572)
 scale = Vector2(3, 3)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Límites"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Límites" unique_id=633689323]
 position = Vector2(423.00003, -0.5)
 shape = SubResource("RectangleShape2D_kijln")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Límites"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Límites" unique_id=992166855]
 position = Vector2(424, 484)
 shape = SubResource("RectangleShape2D_t6b2e")
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Límites"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Límites" unique_id=1576709157]
 position = Vector2(-16, 242)
 shape = SubResource("RectangleShape2D_hc6nc")
 
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Límites"]
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Límites" unique_id=470607239]
 position = Vector2(863, 242)
 shape = SubResource("RectangleShape2D_0g0i5")
 
-[node name="Enemigo" parent="." instance=ExtResource("4_t6b2e")]
+[node name="Enemigo" parent="." unique_id=1464146915 instance=ExtResource("4_t6b2e")]
 position = Vector2(1525, -361)
 
-[node name="Drug" parent="." instance=ExtResource("6_0g0i5")]
+[node name="Drug" parent="." unique_id=165711683 instance=ExtResource("6_0g0i5")]
 position = Vector2(664, 405)
 
-[node name="Drug2" parent="." instance=ExtResource("6_0g0i5")]
+[node name="Drug2" parent="." unique_id=1192033398 instance=ExtResource("6_0g0i5")]
 position = Vector2(874, 298)
 
-[node name="Drug3" parent="." instance=ExtResource("6_0g0i5")]
+[node name="Drug3" parent="." unique_id=567918773 instance=ExtResource("6_0g0i5")]
 position = Vector2(1106, 437)
 
-[node name="Drug4" parent="." instance=ExtResource("6_0g0i5")]
+[node name="Drug4" parent="." unique_id=1973327048 instance=ExtResource("6_0g0i5")]
 position = Vector2(872, 587)
 
-[node name="Drug5" parent="." instance=ExtResource("6_0g0i5")]
+[node name="Drug5" parent="." unique_id=1851516040 instance=ExtResource("6_0g0i5")]
 position = Vector2(598, 613)
 
-[node name="MenuPausa" parent="." instance=ExtResource("8_85bst")]
+[node name="MenuPausa" parent="." unique_id=1092393345 instance=ExtResource("8_85bst")]
 
-[node name="GUI" parent="." instance=ExtResource("7_18jpq")]
+[node name="GUI" parent="." unique_id=84924897 instance=ExtResource("7_18jpq")]
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." unique_id=1772541610]
 script = ExtResource("8_lhw8i")
 next_scene_path = "res://Scenes/pafu.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1529255922]
 position = Vector2(-830, -518)
 shape = SubResource("RectangleShape2D_ajvis")
+
+[node name="Node2D" parent="." unique_id=2046912916 instance=ExtResource("9_ajvis")]
+position = Vector2(-218, -82)
