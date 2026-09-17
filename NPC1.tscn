@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cbkqehoptonsh"]
+
+[ext_resource type="Script" uid="uid://2t27rxrh1bbj" path="res://npc.gd" id="1_gnt6e"]
+[ext_resource type="Texture2D" uid="uid://dssimdwvp8d3l" path="res://icon.svg" id="1_ru7j7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gnt6e"]
+size = Vector2(128, 126)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_31y6r"]
+radius = 243.07407
+
+[node name="NPC" type="StaticBody2D" unique_id=304510071 groups=["npc"]]
+script = ExtResource("1_gnt6e")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=2024170597]
+texture = ExtResource("1_ru7j7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1146893486]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_gnt6e")
+
+[node name="AreaInteraccion" type="Area2D" parent="." unique_id=1605004428]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaInteraccion" unique_id=1001783312]
+shape = SubResource("CircleShape2D_31y6r")
