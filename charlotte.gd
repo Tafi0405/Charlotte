@@ -65,7 +65,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 
 	# ==========================================
-	# INTERACCIÓN
+	# INTERACCIÓN CON OBJETOS / NPC
 	# ==========================================
 	if Input.is_action_just_pressed("InteractuarSister"):
 		# 1. Prioridad: Buscar si hay un NPC cerca
@@ -78,12 +78,6 @@ func _physics_process(delta: float) -> void:
 			soltar_objeto()
 		else:
 			buscar_objeto()
-
-	# Detecta las respuestas (1 o 2) para el diálogo activo
-	if Input.is_key_pressed(KEY_1) or Input.is_key_pressed(KEY_KP_1):
-		enviar_respuesta_a_npc(1)
-	elif Input.is_key_pressed(KEY_2) or Input.is_key_pressed(KEY_KP_2):
-		enviar_respuesta_a_npc(2)
 
 	# ==========================================
 	# SALUD
@@ -120,6 +114,18 @@ func _physics_process(delta: float) -> void:
 				currentToxicity = 0
 			
 			toxicityChange.emit()
+
+
+# ==========================================
+# MANEJO DE TECLAS PARA RESPUESTAS (1 ÚNICA PULSACIÓN)
+# ==========================================
+func _unhandled_input(event: InputEvent) -> void:
+	# not event.echo evita que se repita la acción si mantienes la tecla presionada
+	if event is InputEventKey and event.pressed and not event.echo:
+		if event.keycode == KEY_1 or event.keycode == KEY_KP_1:
+			enviar_respuesta_a_npc(1)
+		elif event.keycode == KEY_2 or event.keycode == KEY_KP_2:
+			enviar_respuesta_a_npc(2)
 
 
 # ==========================================
