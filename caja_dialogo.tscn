@@ -1,0 +1,36 @@
+[gd_scene format=3 uid="uid://bdangoiccf7uy"]
+
+[ext_resource type="Script" uid="uid://dtav3erampunq" path="res://caja_dialogo.gd" id="1_ks8wp"]
+
+[node name="CajaDialogo" type="CanvasLayer" unique_id=92229597]
+script = ExtResource("1_ks8wp")
+
+[node name="PanelDialogo" type="Panel" parent="." unique_id=885190163]
+offset_right = 284.0
+offset_bottom = 113.0
+
+[node name="TextoDialogo" type="RichTextLabel" parent="PanelDialogo" unique_id=2104741838]
+layout_mode = 0
+offset_right = 283.0
+offset_bottom = 40.0
+
+[node name="OpcionesContainer" type="VBoxContainer" parent="PanelDialogo" unique_id=772519774]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -196.0
+offset_top = 79.5
+offset_right = -123.0
+offset_bottom = 100.5
+grow_horizontal = 0
+grow_vertical = 2
+alignment = 1
+
+[node name="BotonOpcion1" type="Button" parent="PanelDialogo/OpcionesContainer" unique_id=1464472189]
+layout_mode = 2
+
+[node name="BotonOpcion2" type="Button" parent="PanelDialogo/OpcionesContainer" unique_id=614486122]
+layout_mode = 2

@@ -193,8 +193,5 @@ func buscar_npc_cercano():
 	return null
 
 func enviar_respuesta_a_npc(opcion: int):
-	var npcs = get_tree().get_nodes_in_group("npc")
-	for npc in npcs:
-		if global_position.distance_to(npc.global_position) <= 150.0 and npc.in_conversation:
-			npc.responder(opcion)
-			return
+	# Ya no se requiere porque el jugador hace clic directo en los botones de la CajaDialogo
+	pass
