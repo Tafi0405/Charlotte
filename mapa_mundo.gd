@@ -3,10 +3,10 @@ extends Control
 
 
 func _on_tb_niv_1_pressed() -> void:
-	get_tree().change_scene_to_file("")
+	get_tree().change_scene_to_file("res://Scenes/pafu.tscn")
 
 func _on_tb_niv_2_pressed() -> void:
-	get_tree().change_scene_to_file("")
+	get_tree().change_scene_to_file("res://Scenes/piso.tscn")
 
 func _on_tb_niv_3_pressed() -> void:
 	get_tree().change_scene_to_file("")
