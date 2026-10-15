@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://victqajn4cti"
-path="res://.godot/imported/Isla Central.png-d6b48fd8477c7610165b14155c28818f.ctex"
+uid="uid://c3d7jnaiwh7rw"
+path="res://.godot/imported/Isla Central-pixel-snapper.png-157d68b9ac89d4c161cdbfd9ef4b0ad6.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Isla Central.png"
-dest_files=["res://.godot/imported/Isla Central.png-d6b48fd8477c7610165b14155c28818f.ctex"]
+source_file="res://Assets/Isla Central-pixel-snapper.png"
+dest_files=["res://.godot/imported/Isla Central-pixel-snapper.png-157d68b9ac89d4c161cdbfd9ef4b0ad6.ctex"]
 
 [params]
 
