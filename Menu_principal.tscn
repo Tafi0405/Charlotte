@@ -20,16 +20,16 @@ colors = PackedColorArray(1, 0.6431373, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_ucc2a"]
 gradient = SubResource("Gradient_wdymf")
-fill_from = Vector2(0.6304348, 0.8826087)
-fill_to = Vector2(0.6869565, 0.46086955)
+fill_from = Vector2(0.44444445, 0.67948717)
+fill_to = Vector2(0.42735043, 0)
 
 [sub_resource type="Gradient" id="Gradient_pqyie"]
 colors = PackedColorArray(1, 0.6431373, 1, 1, 1, 1, 1, 0)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_nnrgo"]
 gradient = SubResource("Gradient_pqyie")
-fill_from = Vector2(0.6478261, 0.84782606)
-fill_to = Vector2(0.59130436, 0.3043478)
+fill_from = Vector2(0.5940171, 0.61538464)
+fill_to = Vector2(0.5726496, 0.017094018)
 
 [node name="Menu" type="Control" unique_id=1871582666]
 layout_mode = 3
@@ -102,7 +102,7 @@ icon_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="ColorRect" unique_id=701314730]
 layout_mode = 0
-offset_top = 270.0
+offset_top = 422.0
 offset_right = 427.0
 offset_bottom = 486.0
 texture = SubResource("GradientTexture2D_ucc2a")
@@ -110,7 +110,7 @@ texture = SubResource("GradientTexture2D_ucc2a")
 [node name="TextureRect2" type="TextureRect" parent="ColorRect" unique_id=1221154158]
 layout_mode = 0
 offset_left = 427.0
-offset_top = 318.0
+offset_top = 422.0
 offset_right = 864.0
 offset_bottom = 486.0
 texture = SubResource("GradientTexture2D_nnrgo")
