@@ -1,41 +1,47 @@
 {
   "npc_1": {
-    "fase_1": {
-      "texto": "¡Hola Charlotte! Qué bueno verte. ¿Necesitas algo en particular?",
-      "opcion_1_texto": "Buscar medicina",
-      "opcion_1_siguiente": "fase_medicina",
-      "opcion_2_texto": "Solo explorar",
-      "opcion_2_siguiente": "fase_explorar"
-    },
-    "fase_medicina": {
-      "texto": "La toxicidad es alta aquí... ¿Quieres un antídoto?",
-      "opcion_1_texto": "Sí, por favor",
-      "opcion_1_siguiente": "final_medicina_si",
-      "opcion_2_texto": "No, estoy bien",
-      "opcion_2_siguiente": "final_medicina_no"
-    },
-    "fase_explorar": {
-      "texto": "Hay zonas peligrosas cerca. ¿Quieres un consejo?",
-      "opcion_1_texto": "Dame un consejo",
-      "opcion_1_siguiente": "final_explorar_si",
-      "opcion_2_texto": "Seguir solo",
-      "opcion_2_siguiente": "final_explorar_no"
-    },
-    "final_medicina_si": {
-      "texto": "NPC: Toma esto. Te ayudará.",
-      "es_final": true
-    },
-    "final_medicina_no": {
-      "texto": "NPC: De acuerdo. Si te sientes mal, avísame.",
-      "es_final": true
-    },
-    "final_explorar_si": {
-      "texto": "NPC: Evita el área oeste, hay trampas.",
-      "es_final": true
-    },
-    "final_explorar_no": {
-      "texto": "NPC: Mucha suerte en tu camino.",
-      "es_final": true
-    }
+	"fase_1": {
+	  "texto": "¡Hola Charlotte! Qué bueno verte. ¿Necesitas algo en particular?",
+	  "opcion_1_texto": "Buscar medicina",
+	  "opcion_1_respuesta": "Charlotte: Iré a buscar la medicina.",
+	  "opcion_1_siguiente": "fase_medicina",
+	  "opcion_2_texto": "Solo explorar",
+	  "opcion_2_respuesta": "Charlotte: Solo estoy explorando por aquí.",
+	  "opcion_2_siguiente": "fase_explorar"
+	},
+	"fase_medicina": {
+	  "texto": "La toxicidad es alta aquí... ¿Quieres un antídoto?",
+	  "opcion_1_texto": "Sí, por favor",
+	  "opcion_1_respuesta": "Charlotte: Sí, por favor, lo necesito.",
+	  "opcion_1_siguiente": "final_medicina_si",
+	  "opcion_2_texto": "No, estoy bien",
+	  "opcion_2_respuesta": "Charlotte: No, estoy bien por ahora.",
+	  "opcion_2_siguiente": "final_medicina_no"
+	},
+	"fase_explorar": {
+	  "texto": "Hay zonas peligrosas cerca. ¿Quieres un consejo?",
+	  "opcion_1_texto": "Dame un consejo",
+	  "opcion_1_respuesta": "Charlotte: Sí, dime qué debo evitar.",
+	  "opcion_1_siguiente": "final_explorar_si",
+	  "opcion_2_texto": "Seguir solo",
+	  "opcion_2_respuesta": "Charlotte: Prefiero averiguarlo por mi cuenta.",
+	  "opcion_2_siguiente": "final_explorar_no"
+	},
+	"final_medicina_si": {
+	  "texto": "NPC: Toma esto. Te ayudará con la toxicidad.",
+	  "es_final": true
+	},
+	"final_medicina_no": {
+	  "texto": "NPC: De acuerdo. Si te sientes mal, avísame.",
+	  "es_final": true
+	},
+	"final_explorar_si": {
+	  "texto": "NPC: Evita el área oeste, las trampas están activas.",
+	  "es_final": true
+	},
+	"final_explorar_no": {
+	  "texto": "NPC: Mucha suerte en tu camino, ten cuidado.",
+	  "es_final": true
+	}
   }
 }

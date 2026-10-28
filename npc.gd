@@ -63,10 +63,23 @@ func _on_opcion_seleccionada(opcion: int) -> void:
 		return
 		
 	var nodo_fase = datos_dialogos[npc_id][fase_actual]
+	var siguiente_fase = ""
+	var texto_respuesta_charlotte = ""
 	
+	# Obtenemos la respuesta y la siguiente fase según el botón elegido
 	if opcion == 1:
-		fase_actual = nodo_fase["opcion_1_siguiente"]
+		siguiente_fase = nodo_fase["opcion_1_siguiente"]
+		texto_respuesta_charlotte = nodo_fase.get("opcion_1_respuesta", "Charlotte: ...")
 	elif opcion == 2:
-		fase_actual = nodo_fase["opcion_2_siguiente"]
-		
+		siguiente_fase = nodo_fase["opcion_2_siguiente"]
+		texto_respuesta_charlotte = nodo_fase.get("opcion_2_respuesta", "Charlotte: ...")
+	
+	# 1. Mostramos lo que dice Charlotte usando la función de texto normal
+	caja_dialogo_instancia.mostrar_texto(texto_respuesta_charlotte)
+	
+	# 2. Esperamos unos segundos para que se lea la respuesta de Charlotte
+	await get_tree().create_timer(1.8).timeout
+	
+	# 3. Actualizamos a la siguiente fase y continuamos
+	fase_actual = siguiente_fase
 	mostrar_fase_actual()
