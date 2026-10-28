@@ -4,17 +4,34 @@ extends Node
 var health := 100
 var toxicity := 0
 
-# Nivel más alto al que se permite acceder.
-# Al comenzar una partida, solo se desbloquea el nivel 1.
-var nivel_maximo_desbloqueado: int = 1
+var nivel_1_completado: bool = false
 
 
-func completar_nivel(nivel: int) -> void:
-	nivel_maximo_desbloqueado = max(
-		nivel_maximo_desbloqueado,
-		nivel + 1
-	)
+func guardar_progreso() -> void:
+	var datos = {
+		"nivel_1_completado": nivel_1_completado
+	}
+
+	var archivo = FileAccess.open("user://progreso.json", FileAccess.WRITE)
+
+	if archivo == null:
+		push_error("No se pudo guardar el progreso.")
+		return
+
+	archivo.store_string(JSON.stringify(datos))
+	archivo.close()
 
 
-func nivel_desbloqueado(nivel: int) -> bool:
-	return nivel <= nivel_maximo_desbloqueado
+func cargar_progreso() -> void:
+	if not FileAccess.file_exists("user://progreso.json"):
+		return
+
+	var archivo = FileAccess.open("user://progreso.json", FileAccess.READ)
+	if archivo == null:
+		return
+
+	var datos = JSON.parse_string(archivo.get_as_text())
+	archivo.close()
+
+	if datos is Dictionary:
+		nivel_1_completado = datos.get("nivel_1_completado", false)
