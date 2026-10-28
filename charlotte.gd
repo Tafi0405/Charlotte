@@ -160,9 +160,39 @@ func soltar_objeto():
 # ==========================================
 # SALUD Y DATOS (Funciones)
 # ==========================================
+
 func add_toxicity(amount: float):
-	currentToxicity = min(currentToxicity + amount, maxToxicity)
+	var toxicidad_anterior = currentToxicity
+
+	currentToxicity = min(
+		currentToxicity + amount,
+		maxToxicity
+	)
+
 	toxicityChange.emit()
+
+	# Victoria del nivel 1 al alcanzar el 20 %.
+	if (
+		toxicidad_anterior < maxToxicity * 0.20
+		and currentToxicity >= maxToxicity * 0.20
+		and get_tree().current_scene.scene_file_path == "res://Scenes/pafu.tscn"
+	):
+		guardar_victoria_nivel_1()
+
+	if currentToxicity >= maxToxicity:
+		overDose()
+
+
+func guardar_victoria_nivel_1() -> void:
+	# Guardar los datos actuales del jugador.
+	save_data()
+
+	# Desbloquear el nivel siguiente.
+	PlayerData.completar_nivel(1)
+
+	# Volver al mapa del mundo.
+	get_tree().change_scene_to_file("res://mapa_mundo.tscn")
+
 	
 	if currentToxicity >= maxToxicity:
 		overDose()
