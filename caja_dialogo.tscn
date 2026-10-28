@@ -6,13 +6,15 @@
 script = ExtResource("1_ks8wp")
 
 [node name="PanelDialogo" type="Panel" parent="." unique_id=885190163]
-offset_right = 284.0
-offset_bottom = 113.0
+offset_left = 8.0
+offset_top = 302.0
+offset_right = 855.0
+offset_bottom = 415.0
 
 [node name="TextoDialogo" type="RichTextLabel" parent="PanelDialogo" unique_id=2104741838]
 layout_mode = 0
-offset_right = 283.0
-offset_bottom = 40.0
+offset_right = 840.0
+offset_bottom = 104.0
 
 [node name="OpcionesContainer" type="VBoxContainer" parent="PanelDialogo" unique_id=772519774]
 layout_mode = 1
