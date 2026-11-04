@@ -44,19 +44,20 @@ func mostrar_fase_actual() -> void:
 		
 	var nodo_fase = datos_dialogos[npc_id][fase_actual]
 	
-	# Si es un nodo final (solo texto sin opciones)
 	if nodo_fase.has("es_final") and nodo_fase["es_final"]:
-		caja_dialogo_instancia.mostrar_texto(nodo_fase["texto"])
-		await get_tree().create_timer(3.0).timeout
+		var fue_salteado = await caja_dialogo_instancia.mostrar_texto(nodo_fase["texto"])
+		if not fue_salteado:
+			await get_tree().create_timer(1.5).timeout
 		in_conversation = false
 		caja_dialogo_instancia.ocultar()
 	else:
-		# Muestra la pregunta y los dos botones con texto del JSON
-		caja_dialogo_instancia.mostrar_opciones(
+		var fue_salteado = await caja_dialogo_instancia.mostrar_opciones(
 			nodo_fase["texto"],
 			nodo_fase["opcion_1_texto"],
 			nodo_fase["opcion_2_texto"]
 		)
+		if fue_salteado:
+			in_conversation = false
 
 func _on_opcion_seleccionada(opcion: int) -> void:
 	if not in_conversation:
@@ -66,7 +67,6 @@ func _on_opcion_seleccionada(opcion: int) -> void:
 	var siguiente_fase = ""
 	var texto_respuesta_charlotte = ""
 	
-	# Obtenemos la respuesta y la siguiente fase según el botón elegido
 	if opcion == 1:
 		siguiente_fase = nodo_fase["opcion_1_siguiente"]
 		texto_respuesta_charlotte = nodo_fase.get("opcion_1_respuesta", "Charlotte: ...")
@@ -74,12 +74,13 @@ func _on_opcion_seleccionada(opcion: int) -> void:
 		siguiente_fase = nodo_fase["opcion_2_siguiente"]
 		texto_respuesta_charlotte = nodo_fase.get("opcion_2_respuesta", "Charlotte: ...")
 	
-	# 1. Mostramos lo que dice Charlotte usando la función de texto normal
-	caja_dialogo_instancia.mostrar_texto(texto_respuesta_charlotte)
+	var fue_salteado = await caja_dialogo_instancia.mostrar_texto(texto_respuesta_charlotte)
 	
-	# 2. Esperamos unos segundos para que se lea la respuesta de Charlotte
-	await get_tree().create_timer(1.8).timeout
+	if fue_salteado:
+		in_conversation = false
+		return
+
+	await get_tree().create_timer(1.2).timeout
 	
-	# 3. Actualizamos a la siguiente fase y continuamos
 	fase_actual = siguiente_fase
 	mostrar_fase_actual()

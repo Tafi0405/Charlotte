@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://2t27rxrh1bbj" path="res://npc.gd" id="1_gnt6e"]
 [ext_resource type="Texture2D" uid="uid://dssimdwvp8d3l" path="res://icon.svg" id="1_ru7j7"]
-[ext_resource type="PackedScene" uid="uid://bdangoiccf7uy" path="res://caja_dialogo.tscn" id="2_31y6r"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gnt6e"]
 size = Vector2(128, 126)
@@ -12,7 +11,6 @@ radius = 243.07407
 
 [node name="NPC" type="StaticBody2D" unique_id=304510071 groups=["npc"]]
 script = ExtResource("1_gnt6e")
-caja_dialogo_scene = ExtResource("2_31y6r")
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=2024170597]
 texture = ExtResource("1_ru7j7")
