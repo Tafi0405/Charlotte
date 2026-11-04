@@ -1,0 +1,82 @@
+[gd_scene format=3 uid="uid://bek3ajsgmghi1"]
+
+[ext_resource type="Script" uid="uid://b1yb4cfetn38l" path="res://opciones_menu.gd" id="1_34or8"]
+
+[sub_resource type="Gradient" id="Gradient_wdymf"]
+colors = PackedColorArray(1, 0.6431373, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e1fda"]
+gradient = SubResource("Gradient_wdymf")
+fill_from = Vector2(0.44444445, 0.67948717)
+fill_to = Vector2(0.42735043, 0)
+
+[node name="OpcionesMenu" type="Control" unique_id=832634920]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_34or8")
+
+[node name="TextureRect" type="TextureRect" parent="." unique_id=1645564988]
+layout_mode = 0
+offset_top = 422.0
+offset_right = 864.0
+offset_bottom = 487.0
+texture = SubResource("GradientTexture2D_e1fda")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=405176540]
+layout_mode = 0
+offset_right = 864.0
+offset_bottom = 487.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1803874367]
+layout_mode = 2
+
+[node name="CONFIGURACIÓN" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1406204293]
+layout_mode = 2
+text = "CONFIGURACIÓN"
+horizontal_alignment = 1
+
+[node name="Volumen Música" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1098378867]
+layout_mode = 2
+text = "Volumen de Musica"
+
+[node name="HSliderMusica" type="HSlider" parent="PanelContainer/VBoxContainer" unique_id=297929722]
+layout_mode = 2
+
+[node name="Volumen SFX" type="Label" parent="PanelContainer/VBoxContainer" unique_id=945422132]
+layout_mode = 2
+text = "Volumen de SFX"
+
+[node name="HSliderSFX" type="HSlider" parent="PanelContainer/VBoxContainer" unique_id=1782664768]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=148170612]
+layout_mode = 2
+text = "Cambiar Idioma"
+
+[node name="Mapeo de Controles" type="Label" parent="PanelContainer/VBoxContainer" unique_id=12964977]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer" unique_id=1967363252]
+layout_mode = 2
+
+[node name="Mover Izquierda" type="Label" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=655669612]
+layout_mode = 2
+text = "Mover	 izquierda"
+
+[node name="BotonRebindIzquierda" type="Button" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=296506636]
+layout_mode = 2
+
+[node name="Mover Derecha" type="Label" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=1423136370]
+layout_mode = 2
+text = "Mover derecha"
+
+[node name="BotonRebindDerecha" type="Button" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=2044340516]
+layout_mode = 2
+
+[node name="BotonCerrar" type="Button" parent="PanelContainer/VBoxContainer" unique_id=915543076]
+layout_mode = 2
+text = "Cerrar"
