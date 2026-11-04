@@ -11,4 +11,4 @@ func _on_bsalir_pressed() -> void:
 
 
 func _on_b_configurar_pressed() -> void:
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://opciones_menu.tscn")
