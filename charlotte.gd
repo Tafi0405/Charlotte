@@ -1,4 +1,3 @@
-
 extends CharacterBody2D
 
 @export var walk_speed: float = 350.0
@@ -23,6 +22,9 @@ signal toxicityChange
 # OBJETO DE EQUILIBRIO
 var objeto_equilibrio = null
 
+# PÁGINAS RECOGIDAS (IDs de las páginas que lleva el jugador)
+var paginas_en_mano: Array = []
+
 
 func _ready():
 	add_to_group("player")
@@ -35,6 +37,7 @@ func _ready():
 
 	if PlayerData.escena_guardada == escena_actual and PlayerData.escena_guardada != "":
 		global_position = PlayerData.posicion_guardada
+		paginas_en_mano = PlayerData.paginas_en_mano.duplicate()
 
 		print("Checkpoint recuperado: ", global_position)
 	else:
@@ -76,7 +79,7 @@ func _physics_process(delta: float) -> void:
 
 
 	# ==========================================
-	# INTERACCIÓN CON OBJETOS / NPC
+	# INTERACCIÓN CON OBJETOS / NPC / PÁGINAS / LIBRO
 	# ==========================================
 
 	if Input.is_action_just_pressed("InteractuarSister"):
@@ -88,6 +91,9 @@ func _physics_process(delta: float) -> void:
 
 		elif objeto_equilibrio != null:
 			soltar_objeto()
+
+		elif interactuar_con_libro_o_pagina():
+			pass
 
 		else:
 			buscar_objeto()
@@ -187,6 +193,28 @@ func soltar_objeto():
 		print("Objeto soltado")
 
 		objeto_equilibrio = null
+
+
+# ==========================================
+# PÁGINAS Y LIBRO
+# ==========================================
+
+func interactuar_con_libro_o_pagina() -> bool:
+
+	# 1. Si lleva páginas y está cerca del libro, las coloca
+	if paginas_en_mano.size() > 0:
+		for libro in get_tree().get_nodes_in_group("libro"):
+			if global_position.distance_to(libro.global_position) <= 150.0:
+				if libro.colocar_paginas(self):
+					return true
+
+	# 2. Si hay una página cerca, la recoge
+	for pagina in get_tree().get_nodes_in_group("pagina"):
+		if global_position.distance_to(pagina.global_position) <= 150.0:
+			pagina.recoger(self)
+			return true
+
+	return false
 
 
 # ==========================================

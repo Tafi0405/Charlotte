@@ -1,4 +1,3 @@
-
 extends Node
 
 var health: int = 100
@@ -10,9 +9,22 @@ var nivel_1_completado: bool = false
 var posicion_guardada: Vector2 = Vector2.ZERO
 var escena_guardada: String = ""
 
+# Estado de páginas y libro en el checkpoint
+var paginas_en_mano: Array = []
+var paginas_colocadas: Array = []
+
 
 func _ready() -> void:
 	cargar_progreso()
+
+
+# ==========================================
+# ¿EL CHECKPOINT PERTENECE A LA ESCENA ACTUAL?
+# ==========================================
+
+func hay_checkpoint_en_escena() -> bool:
+	var escena = get_tree().current_scene
+	return escena != null and escena_guardada != "" and escena_guardada == escena.scene_file_path
 
 
 # ==========================================
@@ -27,7 +39,9 @@ func guardar_progreso() -> void:
 		"toxicity": toxicity,
 		"posicion_x": posicion_guardada.x,
 		"posicion_y": posicion_guardada.y,
-		"escena": escena_guardada
+		"escena": escena_guardada,
+		"paginas_en_mano": paginas_en_mano,
+		"paginas_colocadas": paginas_colocadas
 	}
 
 	var archivo = FileAccess.open("user://progreso.json", FileAccess.WRITE)
@@ -74,6 +88,9 @@ func cargar_progreso() -> void:
 		)
 
 		escena_guardada = datos.get("escena", "")
+
+		paginas_en_mano = datos.get("paginas_en_mano", [])
+		paginas_colocadas = datos.get("paginas_colocadas", [])
 
 		print("Progreso cargado correctamente.")
 		print("Posición: ", posicion_guardada)

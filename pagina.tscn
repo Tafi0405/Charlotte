@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://ba1iyh0k3xb1t"]
+
+[ext_resource type="Texture2D" uid="uid://dljejd1qatgol" path="res://andera.png" id="1_rdmki"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_c1cw3"]
+radius = 23.345236
+
+[node name="Pagina" type="Node2D" unique_id=490667500]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1218283155]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=9111318]
+position = Vector2(4.250007, -2.2499986)
+scale = Vector2(0.08105466, 0.106445305)
+texture = ExtResource("1_rdmki")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1893829302]
+shape = SubResource("CircleShape2D_c1cw3")

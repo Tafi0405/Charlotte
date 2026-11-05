@@ -5,6 +5,12 @@
 [ext_resource type="PackedScene" uid="uid://cwpmxm2uj3fpj" path="res://gui.tscn" id="3_f73xk"]
 [ext_resource type="PackedScene" uid="uid://b8ciwep4g21xx" path="res://planta.tscn" id="5_3ewff"]
 [ext_resource type="PackedScene" uid="uid://bijspx4ryk32u" path="res://checkpoint_zone.tscn" id="5_f73xk"]
+[ext_resource type="PackedScene" uid="uid://hotxyrq0kuy2" path="res://libro.tscn" id="6_3yiss"]
+[ext_resource type="Script" uid="uid://dmuhmjeguppjv" path="res://libro.gd" id="7_k8pyd"]
+[ext_resource type="PackedScene" uid="uid://ba1iyh0k3xb1t" path="res://pagina.tscn" id="8_0jdr1"]
+[ext_resource type="Script" uid="uid://bb48hou5pwylt" path="res://pagina.gd" id="9_n3dvd"]
+[ext_resource type="Script" uid="uid://cbv14gsw342v4" path="res://pagina2.gd" id="10_cb3nt"]
+[ext_resource type="Script" uid="uid://fe5pduk3cqls" path="res://pagina3.gd" id="11_p80gq"]
 
 [node name="prueba de check point" type="Node2D" unique_id=1347930227]
 
@@ -27,3 +33,19 @@ position = Vector2(497, -25)
 
 [node name="CheckpointZone" parent="." unique_id=2000910387 instance=ExtResource("5_f73xk")]
 position = Vector2(480, 277)
+
+[node name="Libro" parent="." unique_id=902812215 instance=ExtResource("6_3yiss")]
+position = Vector2(-365, -193)
+script = ExtResource("7_k8pyd")
+
+[node name="Pagina" parent="." unique_id=490667500 instance=ExtResource("8_0jdr1")]
+position = Vector2(-599, 157)
+script = ExtResource("9_n3dvd")
+
+[node name="Pagina2" parent="." unique_id=1703933741 instance=ExtResource("8_0jdr1")]
+position = Vector2(-588, 385)
+script = ExtResource("10_cb3nt")
+
+[node name="Pagina3" parent="." unique_id=1586883695 instance=ExtResource("8_0jdr1")]
+position = Vector2(-596, -38)
+script = ExtResource("11_p80gq")
