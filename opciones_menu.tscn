@@ -39,6 +39,28 @@ layout_mode = 2
 text = "CONFIGURACIÓN"
 horizontal_alignment = 1
 
+[node name="Grafico" type="Label" parent="PanelContainer/VBoxContainer" unique_id=601957576]
+layout_mode = 2
+text = "Resolucion"
+
+[node name="OptionResolucion" type="OptionButton" parent="PanelContainer/VBoxContainer" unique_id=323311796]
+layout_mode = 2
+selected = 0
+item_count = 3
+popup/item_0/text = "1080p"
+popup/item_0/id = 1
+popup/item_1/text = "720p"
+popup/item_1/id = 0
+popup/item_2/text = "480p"
+popup/item_2/id = 2
+
+[node name="Pantalla completa" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1935869149]
+layout_mode = 2
+text = "Pantalla completa"
+
+[node name="CheckBoxFullscreen" type="CheckBox" parent="PanelContainer/VBoxContainer" unique_id=1066651319]
+layout_mode = 2
+
 [node name="Volumen Música" type="Label" parent="PanelContainer/VBoxContainer" unique_id=1098378867]
 layout_mode = 2
 text = "Volumen de Musica"
@@ -53,12 +75,10 @@ text = "Volumen de SFX"
 [node name="HSliderSFX" type="HSlider" parent="PanelContainer/VBoxContainer" unique_id=1782664768]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="PanelContainer/VBoxContainer" unique_id=148170612]
-layout_mode = 2
-text = "Cambiar Idioma"
-
 [node name="Mapeo de Controles" type="Label" parent="PanelContainer/VBoxContainer" unique_id=12964977]
 layout_mode = 2
+text = "Movimientos"
+horizontal_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer" unique_id=1967363252]
 layout_mode = 2

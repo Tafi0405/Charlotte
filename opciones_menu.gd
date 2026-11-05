@@ -5,34 +5,59 @@ extends Control
 @onready var btn_rebind_izq: Button = $PanelContainer/VBoxContainer/GridContainer/BotonRebindIzquierda
 @onready var btn_rebind_der: Button = $PanelContainer/VBoxContainer/GridContainer/BotonRebindDerecha
 @onready var btn_cerrar: Button = $PanelContainer/VBoxContainer/BotonCerrar
+@onready var option_resolucion: OptionButton = $PanelContainer/VBoxContainer/OptionResolucion
+@onready var checkbox_fullscreen: CheckBox = $PanelContainer/VBoxContainer/CheckBoxFullscreen
 
 var bus_musica_idx: int
 var bus_sfx_idx: int
 var accion_a_remapear: String = ""
 
+const RESOLUCIONES = {
+	0: Vector2i(854, 480),   # 480p
+	1: Vector2i(1280, 720),  # 720p
+	2: Vector2i(1920, 1080)  # 1080p
+}
+
 func _ready() -> void:
-	# Obtener índices de los buses de audio
 	bus_musica_idx = AudioServer.get_bus_index("Musica")
 	bus_sfx_idx = AudioServer.get_bus_index("SFX")
 	
-	# Configurar rangos de los sliders
 	slider_musica.min_value = 0.0001
 	slider_musica.max_value = 1.0
 	slider_sfx.min_value = 0.0001
 	slider_sfx.max_value = 1.0
 	
-	# Cargar valores actuales
 	slider_musica.value = db_to_linear(AudioServer.get_bus_volume_db(bus_musica_idx))
 	slider_sfx.value = db_to_linear(AudioServer.get_bus_volume_db(bus_sfx_idx))
 	
+	# Sincronizar el estado inicial del CheckBox con el modo actual de la ventana
+	var es_pantalla_completa = (get_window().mode == Window.MODE_FULLSCREEN or get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN)
+	checkbox_fullscreen.set_pressed_no_signal(es_pantalla_completa)	
 	# Conectar señales
+	option_resolucion.item_selected.connect(_on_resolucion_selected)
 	slider_musica.value_changed.connect(_on_musica_value_changed)
 	slider_sfx.value_changed.connect(_on_sfx_value_changed)
 	btn_rebind_izq.pressed.connect(func(): _iniciar_remapeo("ui_left", btn_rebind_izq))
 	btn_rebind_der.pressed.connect(func(): _iniciar_remapeo("ui_right", btn_rebind_der))
 	btn_cerrar.pressed.connect(_on_cerrar_pressed)
+		
+	# NUEVO: Conectar la señal toggled del CheckBox
+	checkbox_fullscreen.toggled.connect(_on_fullscreen_toggled)
 	
 	_actualizar_texto_botones()
+
+func _on_resolucion_selected(index: int) -> void:
+	if RESOLUCIONES.has(index):
+		var nueva_resolucion = RESOLUCIONES[index]
+		get_window().size = nueva_resolucion
+		get_tree().root.content_scale_size = nueva_resolucion
+
+# NUEVO: Función para alternar el modo de pantalla completa
+func _on_fullscreen_toggled(toggled_on: bool) -> void:
+	if toggled_on:
+		get_window().mode = Window.MODE_FULLSCREEN
+	else:
+		get_window().mode = Window.MODE_WINDOWED
 
 func _on_musica_value_changed(val: float) -> void:
 	AudioServer.set_bus_volume_db(bus_musica_idx, linear_to_db(val))
@@ -46,11 +71,8 @@ func _iniciar_remapeo(accion: String, boton: Button) -> void:
 
 func _input(event: InputEvent) -> void:
 	if accion_a_remapear != "" and event is InputEventKey and event.is_pressed():
-		# Eliminar teclas anteriores de esta acción
 		InputMap.action_erase_events(accion_a_remapear)
-		# Asignar el nuevo evento de tecla
 		InputMap.action_add_event(accion_a_remapear, event)
-		
 		accion_a_remapear = ""
 		_actualizar_texto_botones()
 		get_viewport().set_input_as_handled()
