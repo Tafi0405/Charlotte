@@ -1,0 +1,65 @@
+[gd_scene format=3 uid="uid://bh7jln1ysoqeu"]
+
+[ext_resource type="Texture2D" uid="uid://cmtibs2die7hs" path="res://Piso pasillo.png" id="1_yydeg"]
+[ext_resource type="Texture2D" uid="uid://c0vb0df5iesrb" path="res://Borde pasillo.png" id="2_7fevf"]
+[ext_resource type="PackedScene" uid="uid://c5al5wncvlm8c" path="res://charlotte.tscn" id="3_nyyd1"]
+[ext_resource type="PackedScene" uid="uid://cwpmxm2uj3fpj" path="res://gui.tscn" id="4_nyyd1"]
+[ext_resource type="PackedScene" uid="uid://bfa6kgnx2npom" path="res://menu_pausa.tscn" id="5_25egh"]
+[ext_resource type="Script" uid="uid://dq730aiododdl" path="res://area_2d.gd" id="6_25egh"]
+[ext_resource type="Script" uid="uid://4p7bsnb0as1r" path="res://area_2d_2.gd" id="7_fgvqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddicg"]
+size = Vector2(186.5, 49.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otjec"]
+size = Vector2(204, 59.5)
+
+[node name="Node2D" type="Node2D" unique_id=1043752906]
+
+[node name="PisoPasillo" type="Sprite2D" parent="." unique_id=325219103]
+position = Vector2(395.5, 242.5)
+scale = Vector2(0.5668605, 0.720524)
+texture = ExtResource("1_yydeg")
+
+[node name="BordePasillo" type="Sprite2D" parent="." unique_id=1363543018]
+position = Vector2(398.50003, 241)
+scale = Vector2(0.6263941, 0.7207977)
+texture = ExtResource("2_7fevf")
+
+[node name="Charlotte" parent="." unique_id=1185873592 instance=ExtResource("3_nyyd1")]
+position = Vector2(391, 282)
+
+[node name="GUI" parent="." unique_id=353000473 instance=ExtResource("4_nyyd1")]
+
+[node name="MenuPausa" parent="." unique_id=1901257817 instance=ExtResource("5_25egh")]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=2028496328]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=1528023894]
+polygon = PackedVector2Array(303, 0, 299, 485, 8, 485, 4, -7)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2059137626]
+polygon = PackedVector2Array(491, -3, 490, 483, 866, 490, 859, 3)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=2035841460]
+polygon = PackedVector2Array(296, -3, 487, 0, 299, 16)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=592554800]
+polygon = PackedVector2Array(299, 469, 299, 488, 491, 490)
+
+[node name="Area2D" type="Area2D" parent="." unique_id=320746358]
+script = ExtResource("6_25egh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1651026835]
+position = Vector2(398.75, 40.25)
+shape = SubResource("RectangleShape2D_ddicg")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=650608924]
+script = ExtResource("7_fgvqm")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D2" unique_id=671427264]
+position = Vector2(397, 455.75)
+shape = SubResource("RectangleShape2D_otjec")
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

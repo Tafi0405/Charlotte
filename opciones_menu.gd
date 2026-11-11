@@ -5,7 +5,6 @@ extends Control
 @onready var btn_rebind_izq: Button = $PanelContainer/VBoxContainer/GridContainer/BotonRebindIzquierda
 @onready var btn_rebind_der: Button = $PanelContainer/VBoxContainer/GridContainer/BotonRebindDerecha
 @onready var btn_cerrar: Button = $PanelContainer/VBoxContainer/BotonCerrar
-@onready var option_resolucion: OptionButton = $PanelContainer/VBoxContainer/OptionResolucion
 @onready var checkbox_fullscreen: CheckBox = $PanelContainer/VBoxContainer/CheckBoxFullscreen
 
 var bus_musica_idx: int
@@ -34,7 +33,6 @@ func _ready() -> void:
 	var es_pantalla_completa = (get_window().mode == Window.MODE_FULLSCREEN or get_window().mode == Window.MODE_EXCLUSIVE_FULLSCREEN)
 	checkbox_fullscreen.set_pressed_no_signal(es_pantalla_completa)	
 	# Conectar señales
-	option_resolucion.item_selected.connect(_on_resolucion_selected)
 	slider_musica.value_changed.connect(_on_musica_value_changed)
 	slider_sfx.value_changed.connect(_on_sfx_value_changed)
 	btn_rebind_izq.pressed.connect(func(): _iniciar_remapeo("ui_left", btn_rebind_izq))
