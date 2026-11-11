@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://cnj62nutf3m06"]
+[gd_scene load_steps=0 format=3 uid="uid://cnj62nutf3m06"]
 
 [ext_resource type="Script" uid="uid://u6xnsp8bjjyn" path="res://drug.gd" id="1_enjpl"]
 [ext_resource type="Texture2D" uid="uid://cvwh04nlk3qnf" path="res://Assets/drug.png" id="2_h6qik"]

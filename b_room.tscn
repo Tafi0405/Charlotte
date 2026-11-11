@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://gfp80t48hci6"]
+
+[ext_resource type="Texture2D" uid="uid://bp820ce77piyp" path="res://Assets/room/Piso habitacion 1.png" id="1_dyo1i"]
+[ext_resource type="Texture2D" uid="uid://brve88j0lofx3" path="res://Assets/room/Borde habitacion.png" id="2_eo3v1"]
+[ext_resource type="Texture2D" uid="uid://d2fsh8o4q2lyt" path="res://Assets/room/Pared Habitacion1.png" id="3_0nbvq"]
+[ext_resource type="Texture2D" uid="uid://bou7tw7ph6h0s" path="res://Assets/room/Caja de juguetes.png" id="5_h1mai"]
+[ext_resource type="Texture2D" uid="uid://ct8eabhx1avmm" path="res://Assets/room/Cama1.png" id="6_myi8q"]
+[ext_resource type="Texture2D" uid="uid://in4mr4ets5on" path="res://Assets/room/Tren.png" id="7_hm1kj"]
+[ext_resource type="Texture2D" uid="uid://gkingcxk7uc7" path="res://Placeholder.png" id="7_u34am"]
+[ext_resource type="Texture2D" uid="uid://kkjm8unv8ifu" path="res://Assets/room/Mesa de noche.png" id="8_h1mai"]
+[ext_resource type="Texture2D" uid="uid://dsrga2ti385e7" path="res://Assets/room/Lampara.png" id="9_myi8q"]
+[ext_resource type="PackedScene" uid="uid://c5al5wncvlm8c" path="res://charlotte.tscn" id="10_hm1kj"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PisoHabitacion1" type="Sprite2D" parent="."]
+position = Vector2(587, 766.9999)
+scale = Vector2(0.59, 0.59)
+texture = ExtResource("1_dyo1i")
+
+[node name="BordeHabitacion" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-3, -293)
+texture = ExtResource("2_eo3v1")
+
+[node name="ParedHabitacion1" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-4, -904)
+texture = ExtResource("3_0nbvq")
+
+[node name="CajaDeJuguetes" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-578, 410)
+texture = ExtResource("5_h1mai")
+
+[node name="Cama1" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-678, -568)
+texture = ExtResource("6_myi8q")
+
+[node name="Tren" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(458, 188)
+texture = ExtResource("7_hm1kj")
+
+[node name="Placeholder" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(223, -125)
+texture = ExtResource("7_u34am")
+
+[node name="MesaDeNoche" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-356, -628)
+texture = ExtResource("8_h1mai")
+
+[node name="Lampara" type="Sprite2D" parent="PisoHabitacion1/MesaDeNoche"]
+position = Vector2(39, -152)
+texture = ExtResource("9_myi8q")
+
+[node name="Charlotte" parent="." instance=ExtResource("10_hm1kj")]
+position = Vector2(458, 701)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(580, 595)
+zoom = Vector2(0.41, 0.41)

@@ -1,0 +1,26 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4hmeld7j5d1r"]
+
+[ext_resource type="Texture2D" uid="uid://crv7s6xme4wss" path="res://Assets/room/Armario.png" id="1_1gfvm"]
+[ext_resource type="Script" uid="uid://dtcyv3mvcgstr" path="res://armatioInt.gd" id="1_m48yo"]
+[ext_resource type="Texture2D" uid="uid://bad5d2ls4xd4s" path="res://Assets/room/Armario abierto1.png" id="2_m48yo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhui3"]
+size = Vector2(576, 628)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("1_m48yo")
+
+[node name="Armario" type="Sprite2D" parent="Area2D"]
+position = Vector2(1, -1)
+texture = ExtResource("1_1gfvm")
+
+[node name="ArmarioAbierto1" type="Sprite2D" parent="Area2D"]
+visible = false
+position = Vector2(-37, -7)
+texture = ExtResource("2_m48yo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(5, -144)
+shape = SubResource("RectangleShape2D_nhui3")
