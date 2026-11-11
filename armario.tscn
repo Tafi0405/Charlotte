@@ -1,26 +1,49 @@
-[gd_scene load_steps=5 format=3 uid="uid://b4hmeld7j5d1r"]
+[gd_scene load_steps=7 format=3 uid="uid://bu0ne7jfg7v3t"]
 
-[ext_resource type="Texture2D" uid="uid://crv7s6xme4wss" path="res://Assets/room/Armario.png" id="1_1gfvm"]
-[ext_resource type="Script" uid="uid://dtcyv3mvcgstr" path="res://armatioInt.gd" id="1_m48yo"]
-[ext_resource type="Texture2D" uid="uid://bad5d2ls4xd4s" path="res://Assets/room/Armario abierto1.png" id="2_m48yo"]
+[ext_resource type="Texture2D" uid="uid://crv7s6xme4wss" path="res://Assets/room/Armario.png" id="1_xbtjx"]
+[ext_resource type="Texture2D" uid="uid://bad5d2ls4xd4s" path="res://Assets/room/Armario abierto1.png" id="2_j4lat"]
+[ext_resource type="Script" uid="uid://dkstjf4arf8p7" path="res://armarioInt.gd" id="3_j4lat"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_nhui3"]
-size = Vector2(576, 628)
+[sub_resource type="SpriteFrames" id="SpriteFrames_vguxi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_xbtjx")
+}],
+"loop": true,
+"name": &"Closed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j4lat")
+}],
+"loop": true,
+"name": &"Open",
+"speed": 5.0
+}]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0u0ha"]
+size = Vector2(596, 669)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vlmkd"]
+size = Vector2(596, 485)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
+position = Vector2(1, 0)
+sprite_frames = SubResource("SpriteFrames_vguxi")
+animation = &"Closed"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(42, 7)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-40, -148.5)
+shape = SubResource("RectangleShape2D_0u0ha")
 
 [node name="Area2D" type="Area2D" parent="."]
-script = ExtResource("1_m48yo")
-
-[node name="Armario" type="Sprite2D" parent="Area2D"]
-position = Vector2(1, -1)
-texture = ExtResource("1_1gfvm")
-
-[node name="ArmarioAbierto1" type="Sprite2D" parent="Area2D"]
-visible = false
-position = Vector2(-37, -7)
-texture = ExtResource("2_m48yo")
+script = ExtResource("3_j4lat")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(5, -144)
-shape = SubResource("RectangleShape2D_nhui3")
+position = Vector2(2, 232.5)
+shape = SubResource("RectangleShape2D_vlmkd")
