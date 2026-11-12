@@ -1,5 +1,11 @@
 extends CharacterBody2D
 
+@onready var animated_sprite = $AnimatedSprite2D
+
+var last_direction: String = "Down"
+var last_key: String = "Down"
+var actual_animation: String = ""
+
 @export var walk_speed: float = 350.0
 @export var run_speed: float = 600.0
 
@@ -54,15 +60,19 @@ func _physics_process(delta: float) -> void:
 
 	if Input.is_key_pressed(KEY_A) or Input.is_key_pressed(KEY_LEFT):
 		direction.x -= 1
+		animated_sprite.play("Left")
 
 	if Input.is_key_pressed(KEY_D) or Input.is_key_pressed(KEY_RIGHT):
 		direction.x += 1
+		animated_sprite.play("Right")
 
 	if Input.is_key_pressed(KEY_W) or Input.is_key_pressed(KEY_UP):
 		direction.y -= 1
+		animated_sprite.play("Up")
 
 	if Input.is_key_pressed(KEY_S) or Input.is_key_pressed(KEY_DOWN):
 		direction.y += 1
+		animated_sprite.play("Down")
 
 	var current_speed = walk_speed
 	var is_running = false
@@ -72,7 +82,35 @@ func _physics_process(delta: float) -> void:
 		is_running = true
 
 	if direction != Vector2.ZERO:
+		
 		direction = direction.normalized()
+		
+	if direction != Vector2.ZERO:
+		
+		if direction.x != 0 and direction.y == 0:
+			
+			if direction.x < 0:
+				last_direction = "Left"
+			else:
+				last_direction = "Right"
+		elif direction.y != 0 and direction.x == 0:
+			
+			if direction.y < 0:
+				last_direction = "Up"
+			else:
+				last_direction = "Down"
+	
+		var new_animation = last_direction
+	
+		if actual_animation != new_animation:
+			animated_sprite.play(new_animation)
+			actual_animation = new_animation
+	else:
+		var new_animation = "Idle" + last_direction
+		
+		if actual_animation != new_animation:
+			animated_sprite.play(new_animation)
+			actual_animation = new_animation
 
 	velocity = direction * current_speed
 	move_and_slide()
