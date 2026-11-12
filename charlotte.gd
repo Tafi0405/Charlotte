@@ -53,31 +53,31 @@ func _ready():
 func _physics_process(delta: float) -> void:
 
 	# ==========================================
-	# MOVIMIENTO
+	# MOVIMIENTO (Usando InputMap para aceptar remapeo)
 	# ==========================================
 
 	var direction = Vector2.ZERO
 
-	if Input.is_key_pressed(KEY_A) or Input.is_key_pressed(KEY_LEFT):
+	if Input.is_action_pressed("ui_left"):
 		direction.x -= 1
 		animated_sprite.play("Left")
 
-	if Input.is_key_pressed(KEY_D) or Input.is_key_pressed(KEY_RIGHT):
+	if Input.is_action_pressed("ui_right"):
 		direction.x += 1
 		animated_sprite.play("Right")
 
-	if Input.is_key_pressed(KEY_W) or Input.is_key_pressed(KEY_UP):
+	if Input.is_action_pressed("ui_up"):
 		direction.y -= 1
 		animated_sprite.play("Up")
 
-	if Input.is_key_pressed(KEY_S) or Input.is_key_pressed(KEY_DOWN):
+	if Input.is_action_pressed("ui_down"):
 		direction.y += 1
 		animated_sprite.play("Down")
 
 	var current_speed = walk_speed
 	var is_running = false
 
-	if Input.is_key_pressed(KEY_SHIFT):
+	if Input.is_action_pressed("correr"):
 		current_speed = run_speed
 		is_running = true
 
@@ -120,7 +120,7 @@ func _physics_process(delta: float) -> void:
 	# INTERACCIÓN CON OBJETOS / NPC / PÁGINAS / LIBRO
 	# ==========================================
 
-	if Input.is_action_just_pressed("InteractuarSister"):
+	if Input.is_action_just_pressed("interactuar"):
 
 		var npc_cercano = buscar_npc_cercano()
 
