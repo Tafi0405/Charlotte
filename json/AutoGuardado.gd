@@ -1,12 +1,6 @@
 extends Timer
 
-func save():
-	var save_dict = {
-		"filename" : get_scene_file_path(),
-		"parent" : get_parent().get_path(),
-		# poner las variables que se guardan
-		}
-	return save_dict
+
 
 func save_game():
 	var save_file = FileAccess.open("user://savegame.save", FileAccess.WRITE)

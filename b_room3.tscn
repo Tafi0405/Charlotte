@@ -1,0 +1,221 @@
+[gd_scene load_steps=37 format=3 uid="uid://cfe6kcl7aogd"]
+
+[ext_resource type="Texture2D" uid="uid://bp820ce77piyp" path="res://Assets/room/Piso habitacion 1.png" id="1_464l0"]
+[ext_resource type="Texture2D" uid="uid://2pslm141vm8u" path="res://Assets/Habitacion3/ParedHabitacion_H3.png" id="2_sf736"]
+[ext_resource type="Texture2D" uid="uid://brve88j0lofx3" path="res://Assets/room/Borde habitacion.png" id="3_6r20l"]
+[ext_resource type="Texture2D" uid="uid://de08igyr6w423" path="res://Assets/Habitacion3/Poster_Chilipeppers_H3.png" id="3_axhw3"]
+[ext_resource type="Texture2D" uid="uid://bgtm2yaroxwpa" path="res://Assets/Habitacion3/Poster_Nirvana_H3.png" id="4_lacmv"]
+[ext_resource type="Texture2D" uid="uid://c4g53vfonher4" path="res://Assets/Habitacion3/Armario_H3.png" id="4_n0n4r"]
+[ext_resource type="Texture2D" uid="uid://v8ko44whd1jx" path="res://Assets/Habitacion3/TachoBasura_H3.png" id="5_ak6ef"]
+[ext_resource type="Texture2D" uid="uid://cqwws3anvn2lr" path="res://Assets/Habitacion3/Poster_Babasoicos_H3.png" id="5_oimk2"]
+[ext_resource type="Texture2D" uid="uid://2yi40xeujhks" path="res://Assets/Habitacion3/Poster_SodaEstereo_H3.png" id="6_gqjh0"]
+[ext_resource type="Texture2D" uid="uid://d0sbbrtrlae56" path="res://Assets/Habitacion3/Poster_Zelda_H3.png" id="7_pm0kf"]
+[ext_resource type="Texture2D" uid="uid://cgcamlsvlqwu5" path="res://Assets/Habitacion3/Poster_OnePice_H3.png" id="8_y5ypl"]
+[ext_resource type="Texture2D" uid="uid://dxd0khfdub70x" path="res://Assets/Habitacion3/Poster_Asuka_H3.png" id="9_n24t7"]
+[ext_resource type="Texture2D" uid="uid://cnkeqv7uhkdpw" path="res://Assets/Habitacion3/PantalondelArmario_H3.png" id="12_yqq5w"]
+[ext_resource type="Texture2D" uid="uid://dop2c664stf6m" path="res://Assets/Habitacion3/Acuarela.png" id="13_jiuyv"]
+[ext_resource type="Texture2D" uid="uid://kkjm8unv8ifu" path="res://Assets/room/Mesa de noche.png" id="15_f0hsh"]
+[ext_resource type="Texture2D" uid="uid://dvrg4sy8vn01r" path="res://Assets/Habitacion3/TachoFideos en la MesitaNoche_H3.png" id="16_04tgc"]
+[ext_resource type="Texture2D" uid="uid://cscg470ygwy10" path="res://Assets/Habitacion2/Cama_H2.png" id="17_cfudb"]
+[ext_resource type="Texture2D" uid="uid://b0uhjrsoq42we" path="res://Assets/Habitacion3/PeluchePikachu_H3.png" id="18_vgdp8"]
+[ext_resource type="Texture2D" uid="uid://tawotuqnidge" path="res://Assets/Habitacion3/CamisaSobreCama_H3.png" id="19_jcmov"]
+[ext_resource type="Texture2D" uid="uid://caoswhxgnhrj3" path="res://Assets/Habitacion2/Silla_H2.png" id="20_7h2gh"]
+[ext_resource type="Texture2D" uid="uid://bo4dugp7c64q2" path="res://Assets/Habitacion2/Escritorio_H2.png" id="21_c6cdb"]
+[ext_resource type="Texture2D" uid="uid://c34wntwp8qt4e" path="res://Assets/Habitacion3/ObjetosdelEscritorio_H3.png" id="22_eonci"]
+[ext_resource type="Texture2D" uid="uid://d31qig1nv7idt" path="res://Assets/Habitacion3/Monticulo de Ropa_H3.png" id="23_j8t5x"]
+[ext_resource type="Texture2D" uid="uid://bfrdhnpb1usn3" path="res://Assets/Habitacion3/TachoFideos en el Suelo_H3.png" id="24_yilqp"]
+[ext_resource type="Texture2D" uid="uid://stg22xtd7o6a" path="res://Assets/Habitacion2/LataNormal_H2.png" id="25_vtsw1"]
+[ext_resource type="Texture2D" uid="uid://7porkwvmmjkq" path="res://Assets/Habitacion2/LataTirada_H2.png" id="26_wfqir"]
+[ext_resource type="Texture2D" uid="uid://c2twkswc87wth" path="res://Assets/Habitacion3/FotodeViaje_Recogible_H3.png" id="27_76xgw"]
+[ext_resource type="Texture2D" uid="uid://c7oku64rkuxv" path="res://Assets/Habitacion3/Medalla_Recogible_H3.png" id="28_iy63t"]
+[ext_resource type="PackedScene" uid="uid://c5al5wncvlm8c" path="res://charlotte.tscn" id="29_q1ytl"]
+[ext_resource type="PackedScene" uid="uid://bfa6kgnx2npom" path="res://menu_pausa.tscn" id="30_lacmv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wu8wq"]
+size = Vector2(327.11865, 764.40674)
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eeecl"]
+radius = 76.270386
+height = 260.98438
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gvewv"]
+size = Vector2(233.89828, 376.27106)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_istdg"]
+size = Vector2(367.7966, 466.10165)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ucsl0"]
+size = Vector2(179.66103, 235.59326)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cun1w"]
+size = Vector2(637.2882, 257.62708)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PisoHabitacion1" type="Sprite2D" parent="."]
+position = Vector2(587, 750)
+scale = Vector2(0.59, 0.59)
+texture = ExtResource("1_464l0")
+
+[node name="ParedHabitacionH3" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-3, -893)
+texture = ExtResource("2_sf736")
+
+[node name="PosterChilipeppersH3" type="Sprite2D" parent="PisoHabitacion1/ParedHabitacionH3"]
+position = Vector2(342, -168)
+texture = ExtResource("3_axhw3")
+
+[node name="PosterNirvanaH3" type="Sprite2D" parent="PisoHabitacion1/ParedHabitacionH3"]
+position = Vector2(345, 48)
+texture = ExtResource("4_lacmv")
+
+[node name="PosterBabasoicosH3" type="Sprite2D" parent="PisoHabitacion1/ParedHabitacionH3"]
+position = Vector2(563, -165)
+texture = ExtResource("5_oimk2")
+
+[node name="PosterSodaEstereoH3" type="Sprite2D" parent="PisoHabitacion1/ParedHabitacionH3"]
+position = Vector2(563, 48)
+texture = ExtResource("6_gqjh0")
+
+[node name="PosterZeldaH3" type="Sprite2D" parent="PisoHabitacion1/ParedHabitacionH3"]
+position = Vector2(-539, -187)
+texture = ExtResource("7_pm0kf")
+
+[node name="PosterOnePiceH3" type="Sprite2D" parent="PisoHabitacion1/ParedHabitacionH3"]
+position = Vector2(-770, -188)
+texture = ExtResource("8_y5ypl")
+
+[node name="PosterAsukaH3" type="Sprite2D" parent="PisoHabitacion1/ParedHabitacionH3"]
+position = Vector2(-298, -94)
+texture = ExtResource("9_n24t7")
+
+[node name="BordeHabitacion" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(3, -273)
+texture = ExtResource("3_6r20l")
+
+[node name="ArmarioH3" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(741, -531)
+texture = ExtResource("4_n0n4r")
+
+[node name="PantalondelArmarioH3" type="Sprite2D" parent="PisoHabitacion1/ArmarioH3"]
+position = Vector2(-141.99976, 27.999878)
+texture = ExtResource("12_yqq5w")
+
+[node name="Acuarela" type="Sprite2D" parent="PisoHabitacion1/ArmarioH3"]
+position = Vector2(-105, 287)
+texture = ExtResource("13_jiuyv")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/ArmarioH3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/ArmarioH3/StaticBody2D"]
+position = Vector2(10.695068, 270.83044)
+shape = SubResource("RectangleShape2D_wu8wq")
+
+[node name="TachoBasuraH3" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(440, 422)
+texture = ExtResource("5_ak6ef")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/TachoBasuraH3"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/TachoBasuraH3/StaticBody2D"]
+position = Vector2(193.89836, -96.57625)
+rotation = 1.5663548
+shape = SubResource("CapsuleShape2D_eeecl")
+
+[node name="MesaDeNoche" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-368, -579)
+texture = ExtResource("15_f0hsh")
+
+[node name="TachoFideosEnLaMesitaNocheH3" type="Sprite2D" parent="PisoHabitacion1/MesaDeNoche"]
+position = Vector2(-45, -150)
+texture = ExtResource("16_04tgc")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/MesaDeNoche"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/MesaDeNoche/StaticBody2D"]
+position = Vector2(0.20336914, 4.423767)
+shape = SubResource("RectangleShape2D_gvewv")
+
+[node name="CamaH2" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-678, -552)
+texture = ExtResource("17_cfudb")
+
+[node name="PeluchePikachuH3" type="Sprite2D" parent="PisoHabitacion1/CamaH2"]
+position = Vector2(-75, -95)
+texture = ExtResource("18_vgdp8")
+
+[node name="CamisaSobreCamaH3" type="Sprite2D" parent="PisoHabitacion1/CamaH2"]
+position = Vector2(100, 18)
+texture = ExtResource("19_jcmov")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/CamaH2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/CamaH2/StaticBody2D"]
+position = Vector2(-9.288147, 173.18634)
+shape = SubResource("RectangleShape2D_istdg")
+
+[node name="SillaH2" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-548, 270)
+texture = ExtResource("20_7h2gh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/SillaH2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/SillaH2/StaticBody2D"]
+position = Vector2(3.9321594, -3.0507813)
+shape = SubResource("RectangleShape2D_ucsl0")
+
+[node name="EscritorioH2" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-541, 504)
+texture = ExtResource("21_c6cdb")
+
+[node name="ObjetosdelEscritorioH3" type="Sprite2D" parent="PisoHabitacion1/EscritorioH2"]
+position = Vector2(4.9999695, 21.000122)
+texture = ExtResource("22_eonci")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/EscritorioH2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/EscritorioH2/StaticBody2D"]
+position = Vector2(2.0169067, 4.4746094)
+shape = SubResource("RectangleShape2D_cun1w")
+
+[node name="MonticuloDeRopaH3" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(304, -19)
+texture = ExtResource("23_j8t5x")
+
+[node name="TachoFideosEnElSueloH3" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(285, -576)
+texture = ExtResource("24_yilqp")
+
+[node name="LataNormalH2" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-449, -197)
+texture = ExtResource("25_vtsw1")
+
+[node name="LataTiradaH2" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(475, 121)
+texture = ExtResource("26_wfqir")
+
+[node name="LataTiradaH3" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-807, 283)
+texture = ExtResource("26_wfqir")
+
+[node name="FotodeViajeRecogibleH3" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-322, -681)
+texture = ExtResource("27_76xgw")
+
+[node name="MedallaRecogibleH3" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(553, 317)
+texture = ExtResource("28_iy63t")
+
+[node name="Charlotte" parent="." instance=ExtResource("29_q1ytl")]
+position = Vector2(594, 1053)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-5, -5, -124, -5, -126, 1190, 505, 1178, 1184, 1176, 1182, 1, 690, 1, 685, 391, 1133, 393, 1131, 1129, 51, 1129, 42, 395, 505, 381, 500, -5)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(602, 590)
+zoom = Vector2(0.41, 0.41)
+
+[node name="MenuPausa" parent="." instance=ExtResource("30_lacmv")]

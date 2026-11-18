@@ -1,4 +1,4 @@
-[gd_scene format=3 uid="uid://gfp80t48hci6"]
+[gd_scene load_steps=15 format=3 uid="uid://gfp80t48hci6"]
 
 [ext_resource type="Texture2D" uid="uid://bp820ce77piyp" path="res://Assets/room/Piso habitacion 1.png" id="1_dyo1i"]
 [ext_resource type="Texture2D" uid="uid://brve88j0lofx3" path="res://Assets/room/Borde habitacion.png" id="2_eo3v1"]
@@ -6,61 +6,88 @@
 [ext_resource type="Texture2D" uid="uid://bou7tw7ph6h0s" path="res://Assets/room/Caja de juguetes.png" id="5_h1mai"]
 [ext_resource type="Texture2D" uid="uid://ct8eabhx1avmm" path="res://Assets/room/Cama1.png" id="6_myi8q"]
 [ext_resource type="Texture2D" uid="uid://in4mr4ets5on" path="res://Assets/room/Tren.png" id="7_hm1kj"]
-[ext_resource type="Texture2D" uid="uid://gkingcxk7uc7" path="res://Placeholder.png" id="7_u34am"]
 [ext_resource type="Texture2D" uid="uid://kkjm8unv8ifu" path="res://Assets/room/Mesa de noche.png" id="8_h1mai"]
 [ext_resource type="Texture2D" uid="uid://dsrga2ti385e7" path="res://Assets/room/Lampara.png" id="9_myi8q"]
 [ext_resource type="PackedScene" uid="uid://c5al5wncvlm8c" path="res://charlotte.tscn" id="10_hm1kj"]
 [ext_resource type="PackedScene" uid="uid://bfa6kgnx2npom" path="res://menu_pausa.tscn" id="11_h1mai"]
+[ext_resource type="PackedScene" uid="uid://bu0ne7jfg7v3t" path="res://Armario.tscn" id="11_myi8q"]
 
-[node name="Node2D" type="Node2D" unique_id=22339069]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h1mai"]
+size = Vector2(540.678, 344.0677)
 
-[node name="PisoHabitacion1" type="Sprite2D" parent="." unique_id=96168691]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_myi8q"]
+size = Vector2(372.88135, 391.5595)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hm1kj"]
+size = Vector2(237.28815, 188.13559)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PisoHabitacion1" type="Sprite2D" parent="."]
 position = Vector2(587, 766.9999)
 scale = Vector2(0.59, 0.59)
 texture = ExtResource("1_dyo1i")
 
-[node name="BordeHabitacion" type="Sprite2D" parent="PisoHabitacion1" unique_id=1622928479]
+[node name="BordeHabitacion" type="Sprite2D" parent="PisoHabitacion1"]
 position = Vector2(-3, -293)
 texture = ExtResource("2_eo3v1")
 
-[node name="ParedHabitacion1" type="Sprite2D" parent="PisoHabitacion1" unique_id=1029796365]
+[node name="ParedHabitacion1" type="Sprite2D" parent="PisoHabitacion1"]
 position = Vector2(-4, -904)
 texture = ExtResource("3_0nbvq")
 
-[node name="CajaDeJuguetes" type="Sprite2D" parent="PisoHabitacion1" unique_id=218884634]
+[node name="CajaDeJuguetes" type="Sprite2D" parent="PisoHabitacion1"]
 position = Vector2(-578, 410)
 texture = ExtResource("5_h1mai")
 
-[node name="Cama1" type="Sprite2D" parent="PisoHabitacion1" unique_id=285622433]
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/CajaDeJuguetes"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/CajaDeJuguetes/StaticBody2D"]
+position = Vector2(-0.8135681, -2.3726807)
+shape = SubResource("RectangleShape2D_h1mai")
+
+[node name="Cama1" type="Sprite2D" parent="PisoHabitacion1"]
 position = Vector2(-678, -568)
 texture = ExtResource("6_myi8q")
 
-[node name="Tren" type="Sprite2D" parent="PisoHabitacion1" unique_id=1417004927]
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/Cama1"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/Cama1/StaticBody2D"]
+position = Vector2(0.03387451, 185.77972)
+shape = SubResource("RectangleShape2D_myi8q")
+
+[node name="Tren" type="Sprite2D" parent="PisoHabitacion1"]
 position = Vector2(458, 188)
 texture = ExtResource("7_hm1kj")
 
-[node name="Placeholder" type="Sprite2D" parent="PisoHabitacion1" unique_id=1955238156]
-position = Vector2(223, -125)
-texture = ExtResource("7_u34am")
-
-[node name="MesaDeNoche" type="Sprite2D" parent="PisoHabitacion1" unique_id=967260909]
+[node name="MesaDeNoche" type="Sprite2D" parent="PisoHabitacion1"]
 position = Vector2(-356, -628)
 texture = ExtResource("8_h1mai")
 
-[node name="Lampara" type="Sprite2D" parent="PisoHabitacion1/MesaDeNoche" unique_id=2025636612]
+[node name="Lampara" type="Sprite2D" parent="PisoHabitacion1/MesaDeNoche"]
 position = Vector2(39, -152)
 texture = ExtResource("9_myi8q")
 
-[node name="Charlotte" parent="." unique_id=680434539 instance=ExtResource("10_hm1kj")]
-position = Vector2(581, 748)
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/MesaDeNoche"]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=459635270]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/MesaDeNoche/StaticBody2D"]
+position = Vector2(-1.6269531, 89.864685)
+shape = SubResource("RectangleShape2D_hm1kj")
+
+[node name="Area2D" parent="PisoHabitacion1" instance=ExtResource("11_myi8q")]
+position = Vector2(615.2542, -754.2371)
+scale = Vector2(0.909, 0.909)
+
+[node name="Charlotte" parent="." instance=ExtResource("10_hm1kj")]
+position = Vector2(588, 869)
+
+[node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(580, 595)
 zoom = Vector2(0.41, 0.41)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1225699067]
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=218876003]
-polygon = PackedVector2Array(505, 2, -480, 0, -468, 1192, 493, 1186, 678, 1184, 1647, 1185, 1636, 10, 689, -12, 694, 51, 697, 369, 1117, 391, 1113, 1127, 676, 1133, 37, 1129, 45, 389, 492, 396, 494, 60, 717, 59)
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(505, 2, -480, 0, -468, 1192, 493, 1186, 678, 1184, 1647, 1185, 1636, 10, 689, -12, 694, 51, 696, 393, 1111, 340, 1113, 1127, 676, 1133, 37, 1129, 45, 389, 492, 396, 494, 60, 717, 59)
 
-[node name="MenuPausa" parent="." unique_id=1901257817 instance=ExtResource("11_h1mai")]
+[node name="MenuPausa" parent="." instance=ExtResource("11_h1mai")]
