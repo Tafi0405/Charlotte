@@ -1,23 +1,46 @@
+
 extends Node2D
 
 
 func _ready() -> void:
 	add_to_group("pagina")
 
-	# Si ya fue recogida o colocada antes del checkpoint, no reaparece
-	if PlayerData.hay_checkpoint_en_escena():
-		var id = obtener_id()
-		if PlayerData.paginas_en_mano.has(id) or PlayerData.paginas_colocadas.has(id):
-			queue_free()
+	# Evitar que reaparezcan páginas recogidas o colocadas
+	var id = obtener_id()
+
+	if PlayerData.paginas_en_mano.has(id) or PlayerData.paginas_colocadas.has(id):
+		queue_free()
 
 
-# ID único: ruta del nodo relativa a la escena
-# (cada página debe tener un nombre distinto: Pagina1, Pagina2, Pagina3)
+# ==========================================
+# IDENTIFICADOR ÚNICO
+# ==========================================
+
 func obtener_id() -> String:
 	return str(get_tree().current_scene.get_path_to(self))
 
 
+# ==========================================
+# RECOGER PÁGINA
+# ==========================================
+
 func recoger(jugador: Node) -> void:
-	jugador.paginas_en_mano.append(obtener_id())
-	print("Página recogida: ", obtener_id())
-	queue_free()   # el objeto desaparece
+
+	var id = obtener_id()
+
+	if jugador.paginas_en_mano.has(id):
+		return
+
+	if PlayerData.paginas_colocadas.has(id):
+		return
+
+	jugador.paginas_en_mano.append(id)
+
+	# Sincronizar y guardar el inventario
+	PlayerData.paginas_en_mano = jugador.paginas_en_mano.duplicate()
+	PlayerData.guardar_progreso()
+
+	print("Página recogida: ", id)
+	print("Páginas en mano: ", jugador.paginas_en_mano.size())
+
+	queue_free()

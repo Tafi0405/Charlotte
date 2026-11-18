@@ -1,3 +1,4 @@
+
 extends Node
 
 var health: int = 100
@@ -9,7 +10,7 @@ var nivel_1_completado: bool = false
 var posicion_guardada: Vector2 = Vector2.ZERO
 var escena_guardada: String = ""
 
-# Estado de páginas y libro en el checkpoint
+# Estado de páginas y libro
 var paginas_en_mano: Array = []
 var paginas_colocadas: Array = []
 
@@ -19,12 +20,38 @@ func _ready() -> void:
 
 
 # ==========================================
-# ¿EL CHECKPOINT PERTENECE A LA ESCENA ACTUAL?
+# CHECKPOINT DE LA ESCENA ACTUAL
 # ==========================================
 
 func hay_checkpoint_en_escena() -> bool:
 	var escena = get_tree().current_scene
-	return escena != null and escena_guardada != "" and escena_guardada == escena.scene_file_path
+
+	return (
+		escena != null
+		and escena_guardada != ""
+		and escena_guardada == escena.scene_file_path
+	)
+
+
+# ==========================================
+# GUARDAR CHECKPOINT COMPLETO
+# ==========================================
+
+func guardar_checkpoint(jugador: Node) -> void:
+
+	health = jugador.currentHealth
+	toxicity = jugador.currentToxicity
+
+	posicion_guardada = jugador.global_position
+	escena_guardada = get_tree().current_scene.scene_file_path
+
+	paginas_en_mano = jugador.paginas_en_mano.duplicate()
+
+	guardar_progreso()
+
+	print("Checkpoint guardado: ", posicion_guardada)
+	print("Páginas en mano: ", paginas_en_mano.size())
+	print("Páginas colocadas: ", paginas_colocadas.size())
 
 
 # ==========================================
@@ -95,3 +122,5 @@ func cargar_progreso() -> void:
 		print("Progreso cargado correctamente.")
 		print("Posición: ", posicion_guardada)
 		print("Escena: ", escena_guardada)
+		print("Páginas en mano: ", paginas_en_mano.size())
+		print("Páginas colocadas: ", paginas_colocadas.size())

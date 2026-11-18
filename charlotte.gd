@@ -1,3 +1,4 @@
+
 extends CharacterBody2D
 
 @onready var animated_sprite = $AnimatedSprite2D
@@ -28,7 +29,7 @@ signal toxicityChange
 # OBJETO DE EQUILIBRIO
 var objeto_equilibrio = null
 
-# PÁGINAS RECOGIDAS (IDs de las páginas que lleva el jugador)
+# PÁGINAS RECOGIDAS
 var paginas_en_mano: Array = []
 
 
@@ -38,22 +39,26 @@ func _ready():
 	currentHealth = PlayerData.health
 	currentToxicity = PlayerData.toxicity
 
+	# RECUPERAR INVENTARIO
+	paginas_en_mano = PlayerData.paginas_en_mano.duplicate()
+
 	# RECUPERAR CHECKPOINT
 	var escena_actual = get_tree().current_scene.scene_file_path
 
 	if PlayerData.escena_guardada == escena_actual and PlayerData.escena_guardada != "":
 		global_position = PlayerData.posicion_guardada
-		paginas_en_mano = PlayerData.paginas_en_mano.duplicate()
 
 		print("Checkpoint recuperado: ", global_position)
 	else:
 		print("No hay checkpoint para esta escena.")
 
+	print("Páginas recuperadas: ", paginas_en_mano.size())
+
 
 func _physics_process(delta: float) -> void:
 
 	# ==========================================
-	# MOVIMIENTO (Usando InputMap para aceptar remapeo)
+	# MOVIMIENTO
 	# ==========================================
 
 	var direction = Vector2.ZERO
@@ -82,32 +87,34 @@ func _physics_process(delta: float) -> void:
 		is_running = true
 
 	if direction != Vector2.ZERO:
-		
 		direction = direction.normalized()
-		
+
 	if direction != Vector2.ZERO:
-		
+
 		if direction.x != 0 and direction.y == 0:
-			
+
 			if direction.x < 0:
 				last_direction = "Left"
 			else:
 				last_direction = "Right"
+
 		elif direction.y != 0 and direction.x == 0:
-			
+
 			if direction.y < 0:
 				last_direction = "Up"
 			else:
 				last_direction = "Down"
-	
+
 		var new_animation = last_direction
-	
+
 		if actual_animation != new_animation:
 			animated_sprite.play(new_animation)
 			actual_animation = new_animation
+
 	else:
+
 		var new_animation = "Idle" + last_direction
-		
+
 		if actual_animation != new_animation:
 			animated_sprite.play(new_animation)
 			actual_animation = new_animation
@@ -241,14 +248,19 @@ func interactuar_con_libro_o_pagina() -> bool:
 
 	# 1. Si lleva páginas y está cerca del libro, las coloca
 	if paginas_en_mano.size() > 0:
+
 		for libro in get_tree().get_nodes_in_group("libro"):
+
 			if global_position.distance_to(libro.global_position) <= 150.0:
+
 				if libro.colocar_paginas(self):
 					return true
 
 	# 2. Si hay una página cerca, la recoge
 	for pagina in get_tree().get_nodes_in_group("pagina"):
+
 		if global_position.distance_to(pagina.global_position) <= 150.0:
+
 			pagina.recoger(self)
 			return true
 
@@ -295,6 +307,9 @@ func overDose():
 func save_data():
 	PlayerData.health = currentHealth
 	PlayerData.toxicity = currentToxicity
+
+	# Sincronizar inventario
+	PlayerData.paginas_en_mano = paginas_en_mano.duplicate()
 
 
 func _on_teleporter_body_entere(body: Node2D) -> void:
