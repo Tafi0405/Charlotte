@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://c5al5wncvlm8c"]
+[gd_scene format=3 uid="uid://c5al5wncvlm8c"]
 
 [ext_resource type="Script" uid="uid://bmpu074062kc7" path="res://charlotte.gd" id="1_uk6mj"]
 [ext_resource type="Texture2D" uid="uid://qrnh0kswgk2f" path="res://Assets/Charlotte_Beta.png" id="2_uk6mj"]
@@ -98,7 +98,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_ykltc")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Down",
 "speed": 5.0
 }, {
@@ -106,7 +106,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_q5nft")
 }],
-"loop": true,
+"loop": 1,
 "name": &"IdleDown",
 "speed": 5.0
 }, {
@@ -114,7 +114,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_evw1n")
 }],
-"loop": true,
+"loop": 1,
 "name": &"IdleLeft",
 "speed": 5.0
 }, {
@@ -122,7 +122,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_qi5pe")
 }],
-"loop": true,
+"loop": 1,
 "name": &"IdleRight",
 "speed": 5.0
 }, {
@@ -130,7 +130,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_u0wgf")
 }],
-"loop": true,
+"loop": 1,
 "name": &"IdleUp",
 "speed": 5.0
 }, {
@@ -147,7 +147,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_82xjh")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Left",
 "speed": 5.0
 }, {
@@ -164,7 +164,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4lrxi")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Right",
 "speed": 5.0
 }, {
@@ -181,7 +181,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pujb3")
 }],
-"loop": true,
+"loop": 1,
 "name": &"Up",
 "speed": 5.0
 }]
@@ -189,15 +189,15 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_y8cb7"]
 radius = 59.0
 
-[node name="Charlotte" type="CharacterBody2D"]
+[node name="Charlotte" type="CharacterBody2D" unique_id=1344139425]
 motion_mode = 1
 script = ExtResource("1_uk6mj")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=452334594]
 position = Vector2(3, -72)
 scale = Vector2(0.5, 0.5)
 sprite_frames = SubResource("SpriteFrames_im502")
 animation = &"IdleUp"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1851679859]
 shape = SubResource("CircleShape2D_y8cb7")

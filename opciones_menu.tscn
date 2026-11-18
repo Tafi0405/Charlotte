@@ -99,13 +99,14 @@ layout_mode = 2
 
 [node name="Interactuar" type="Label" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=1355088738]
 layout_mode = 2
-text = "Interactuar objeto/N"
+text = "Interactuar objeto/NPC"
 
 [node name="BotonRebindInteractuar" type="Button" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=1824262289]
 layout_mode = 2
 
 [node name="Correr" type="Label" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=781833725]
 layout_mode = 2
+text = "Correr"
 
 [node name="BotonRebindCorrer" type="Button" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=8312452]
 layout_mode = 2

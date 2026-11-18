@@ -30,8 +30,6 @@ var objeto_equilibrio = null
 
 # PÁGINAS RECOGIDAS (IDs de las páginas que lleva el jugador)
 var paginas_en_mano: Array = []
-
-
 func _ready():
 	add_to_group("player")
 
@@ -284,12 +282,29 @@ func add_toxicity(amount: float):
 
 
 func die():
-	print("Charlotte descendió a la locura...")
+	PlayerData.health = maxHealth
+	PlayerData.toxicity = 0
+# 1. Cargamos la escena de Game Over en memoria
+	var game_over_scene = preload("res://GameOver.tscn").instantiate()
+	
+	# 2. Le pasamos el texto de la causa directamente a una variable que crearemos allá
+	game_over_scene.causa_texto = "Charlotte descendió a la locura... (Salud agotada)"
+	
+	# 3. Reemplazamos la escena actual por esta
+	get_tree().root.add_child(game_over_scene)
+	get_tree().current_scene.queue_free()
+	get_tree().current_scene = game_over_scene
 
 
 func overDose():
-	print("Charlotte sufrió una sobredosis")
-	get_tree().quit()
+	PlayerData.health = maxHealth
+	PlayerData.toxicity = 0
+	var game_over_scene = preload("res://GameOver.tscn").instantiate()
+	game_over_scene.causa_texto = "Charlotte sufrió una sobredosis de toxicidad."
+	
+	get_tree().root.add_child(game_over_scene)
+	get_tree().current_scene.queue_free()
+	get_tree().current_scene = game_over_scene
 
 
 func save_data():
