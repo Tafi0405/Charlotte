@@ -1,0 +1,13 @@
+extends Timer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	var guardar_jugador = $save_player
+	var guardar_juego = $save_game
+	pass
