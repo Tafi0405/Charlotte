@@ -8,4 +8,6 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	var guardar_jugador = $save_player
+	var guardar_juego = $save_game
 	pass
