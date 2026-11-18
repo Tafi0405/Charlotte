@@ -67,6 +67,7 @@ horizontal_alignment = 1
 
 [node name="GridContainer" type="GridContainer" parent="PanelContainer/VBoxContainer" unique_id=1967363252]
 layout_mode = 2
+columns = 6
 
 [node name="Mover Izquierda" type="Label" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=655669612]
 layout_mode = 2
@@ -80,6 +81,33 @@ layout_mode = 2
 text = "Mover derecha"
 
 [node name="BotonRebindDerecha" type="Button" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=2044340516]
+layout_mode = 2
+
+[node name="Mover arriba" type="Label" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=1161953953]
+layout_mode = 2
+text = "Mover arriba"
+
+[node name="BotonRebindArriba" type="Button" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=1638226266]
+layout_mode = 2
+
+[node name="Mover abajo" type="Label" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=505425759]
+layout_mode = 2
+text = "Mover abajo"
+
+[node name="BotonRebindAbajo" type="Button" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=756260237]
+layout_mode = 2
+
+[node name="Interactuar" type="Label" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=1355088738]
+layout_mode = 2
+text = "Interactuar objeto/N"
+
+[node name="BotonRebindInteractuar" type="Button" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=1824262289]
+layout_mode = 2
+
+[node name="Correr" type="Label" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=781833725]
+layout_mode = 2
+
+[node name="BotonRebindCorrer" type="Button" parent="PanelContainer/VBoxContainer/GridContainer" unique_id=8312452]
 layout_mode = 2
 
 [node name="BotonCerrar" type="Button" parent="PanelContainer/VBoxContainer" unique_id=915543076]
