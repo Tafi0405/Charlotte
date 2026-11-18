@@ -1,0 +1,131 @@
+[gd_scene load_steps=21 format=3 uid="uid://b1vy4itrhadwj"]
+
+[ext_resource type="Texture2D" uid="uid://bp820ce77piyp" path="res://Assets/room/Piso habitacion 1.png" id="1_pkc0p"]
+[ext_resource type="Texture2D" uid="uid://dom6mql337ois" path="res://Assets/Habitacion2/Pared_H2.png" id="2_qnwgq"]
+[ext_resource type="Texture2D" uid="uid://brve88j0lofx3" path="res://Assets/room/Borde habitacion.png" id="3_jpql7"]
+[ext_resource type="Texture2D" uid="uid://dgh3rvcemtygq" path="res://Assets/Habitacion2/TachoBasura_H2.png" id="4_1ya11"]
+[ext_resource type="Texture2D" uid="uid://caoswhxgnhrj3" path="res://Assets/Habitacion2/Silla_H2.png" id="5_jmvk2"]
+[ext_resource type="Texture2D" uid="uid://bo4dugp7c64q2" path="res://Assets/Habitacion2/Escritorio_H2.png" id="6_sm4t0"]
+[ext_resource type="Texture2D" uid="uid://kkjm8unv8ifu" path="res://Assets/room/Mesa de noche.png" id="7_3w3t2"]
+[ext_resource type="Texture2D" uid="uid://cscg470ygwy10" path="res://Assets/Habitacion2/Cama_H2.png" id="8_agxf6"]
+[ext_resource type="Texture2D" uid="uid://stg22xtd7o6a" path="res://Assets/Habitacion2/LataNormal_H2.png" id="9_2hnub"]
+[ext_resource type="Texture2D" uid="uid://bc7felf20dtb3" path="res://Assets/Habitacion2/ObjetosMesa_H2.png" id="9_sm4t0"]
+[ext_resource type="Texture2D" uid="uid://7porkwvmmjkq" path="res://Assets/Habitacion2/LataTirada_H2.png" id="10_3w3t2"]
+[ext_resource type="Texture2D" uid="uid://b34080s2yrsdk" path="res://Assets/Habitacion2/PerchaTirada_H2.png" id="12_agxf6"]
+[ext_resource type="PackedScene" uid="uid://bu0ne7jfg7v3t" path="res://Armario.tscn" id="13_2hnub"]
+[ext_resource type="PackedScene" uid="uid://c5al5wncvlm8c" path="res://charlotte.tscn" id="14_edmed"]
+[ext_resource type="PackedScene" uid="uid://bfa6kgnx2npom" path="res://menu_pausa.tscn" id="15_3w3t2"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3w3t2"]
+radius = 76.27124
+height = 277.96606
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_agxf6"]
+size = Vector2(194.91527, 186.44073)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2hnub"]
+size = Vector2(647.45764, 255.93213)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_edmed"]
+size = Vector2(230.50848, 367.7966)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8me76"]
+size = Vector2(372.88135, 733.8983)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="PisoHabitacion1" type="Sprite2D" parent="."]
+position = Vector2(591, 762)
+scale = Vector2(0.59, 0.59)
+texture = ExtResource("1_pkc0p")
+
+[node name="ParedH2" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-12, -904)
+texture = ExtResource("2_qnwgq")
+
+[node name="BordeHabitacion" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-1, -286)
+texture = ExtResource("3_jpql7")
+
+[node name="TachoBasuraH2" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(541, 373)
+texture = ExtResource("4_1ya11")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/TachoBasuraH2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/TachoBasuraH2/StaticBody2D"]
+position = Vector2(182.72891, -30.627127)
+shape = SubResource("CapsuleShape2D_3w3t2")
+
+[node name="SillaH2" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-560, 291)
+texture = ExtResource("5_jmvk2")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/SillaH2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/SillaH2/StaticBody2D"]
+position = Vector2(1.5253906, -26.593262)
+shape = SubResource("RectangleShape2D_agxf6")
+
+[node name="EscritorioH2" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-557, 484)
+texture = ExtResource("6_sm4t0")
+
+[node name="ObjetosMesaH2" type="Sprite2D" parent="PisoHabitacion1/EscritorioH2"]
+position = Vector2(-27.00003, -1.0001221)
+texture = ExtResource("9_sm4t0")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/EscritorioH2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/EscritorioH2/StaticBody2D"]
+position = Vector2(-2.3220825, 3.288086)
+shape = SubResource("RectangleShape2D_2hnub")
+
+[node name="MesaDeNoche" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-371, -584)
+texture = ExtResource("7_3w3t2")
+
+[node name="LataNormalH2" type="Sprite2D" parent="PisoHabitacion1/MesaDeNoche"]
+position = Vector2(-49, -127)
+texture = ExtResource("9_2hnub")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/MesaDeNoche"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/MesaDeNoche/StaticBody2D"]
+position = Vector2(3.2033691, 3.491516)
+shape = SubResource("RectangleShape2D_edmed")
+
+[node name="CamaH2" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(-687, -550)
+texture = ExtResource("8_agxf6")
+
+[node name="PerchaTiradaH2" type="Sprite2D" parent="PisoHabitacion1/CamaH2"]
+position = Vector2(89, -70)
+texture = ExtResource("12_agxf6")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/CamaH2"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/CamaH2/StaticBody2D"]
+position = Vector2(-14.694946, 27.118652)
+shape = SubResource("RectangleShape2D_8me76")
+
+[node name="Area2D" parent="PisoHabitacion1" instance=ExtResource("13_2hnub")]
+position = Vector2(596, -706)
+
+[node name="LataTiradaH2" type="Sprite2D" parent="PisoHabitacion1"]
+position = Vector2(408, 157.99988)
+texture = ExtResource("10_3w3t2")
+
+[node name="Charlotte" parent="." instance=ExtResource("14_edmed")]
+position = Vector2(599, 687)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(604, 594)
+zoom = Vector2(0.41, 0.41)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(8, -3, -451, 0, -448, 1177, 498, 1181, 1178, 1177, 1178, -10, 685, 3, 689, 388, 1119, 384, 1123, 1136, 49, 1132, 49, 376, 505, 397, 505, 7)
+
+[node name="MenuPausa" parent="." instance=ExtResource("15_3w3t2")]
