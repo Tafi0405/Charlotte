@@ -1,4 +1,4 @@
-[gd_scene load_steps=4 format=3 uid="uid://db8r632kdv2aj"]
+[gd_scene format=3 uid="uid://db8r632kdv2aj"]
 
 [ext_resource type="Script" uid="uid://b4mly0aq3lwt0" path="res://Scenes/SceneChange.gd" id="1_qc2o3"]
 [ext_resource type="Texture2D" uid="uid://byfuhrek6cqle" path="res://Assets/Puerta.png" id="2_rwbow"]

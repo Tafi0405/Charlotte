@@ -62,7 +62,7 @@ func _physics_process(delta):
 	# COMPROBAR CAÍDA
 	# ==========================================
 
-	if abs(rad_to_deg(rotation)) >= inclinacion_maxima:
+	if abs(rotation) >= (deg_to_rad(inclinacion_maxima - 5)):
 		caer()
 
 
@@ -116,7 +116,8 @@ func caer():
 
 	# Reactivar colisión
 	$CollisionShape2D.set_deferred("disabled", false)
-
+	
+	await get_tree().create_timer(1).timeout
 	# Sigue siendo estático
 	freeze = true
 
@@ -124,8 +125,6 @@ func caer():
 	angular_velocity = 0.0
 
 	print("OBJETO CAÍDO")
-
-	await get_tree().create_timer(0.3).timeout
 
 	cayendo = false
 
