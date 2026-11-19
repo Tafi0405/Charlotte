@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=3 uid="uid://b1vy4itrhadwj"]
+[gd_scene load_steps=24 format=3 uid="uid://b1vy4itrhadwj"]
 
 [ext_resource type="Texture2D" uid="uid://bp820ce77piyp" path="res://Assets/room/Piso habitacion 1.png" id="1_pkc0p"]
 [ext_resource type="Texture2D" uid="uid://dom6mql337ois" path="res://Assets/Habitacion2/Pared_H2.png" id="2_qnwgq"]
@@ -13,8 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://7porkwvmmjkq" path="res://Assets/Habitacion2/LataTirada_H2.png" id="10_3w3t2"]
 [ext_resource type="Texture2D" uid="uid://b34080s2yrsdk" path="res://Assets/Habitacion2/PerchaTirada_H2.png" id="12_agxf6"]
 [ext_resource type="PackedScene" uid="uid://bu0ne7jfg7v3t" path="res://Armario.tscn" id="13_2hnub"]
+[ext_resource type="PackedScene" uid="uid://db8r632kdv2aj" path="res://Puerta.tscn" id="14_2hnub"]
 [ext_resource type="PackedScene" uid="uid://c5al5wncvlm8c" path="res://charlotte.tscn" id="14_edmed"]
 [ext_resource type="PackedScene" uid="uid://bfa6kgnx2npom" path="res://menu_pausa.tscn" id="15_3w3t2"]
+[ext_resource type="Script" uid="uid://b4mly0aq3lwt0" path="res://Scenes/SceneChange.gd" id="17_edmed"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3w3t2"]
 radius = 76.27124
@@ -31,6 +33,9 @@ size = Vector2(230.50848, 367.7966)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8me76"]
 size = Vector2(372.88135, 733.8983)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_03sc5"]
+size = Vector2(232.2148, 28.187958)
 
 [node name="Node2D" type="Node2D"]
 
@@ -116,6 +121,11 @@ position = Vector2(596, -706)
 position = Vector2(408, 157.99988)
 texture = ExtResource("10_3w3t2")
 
+[node name="Area2D" parent="." instance=ExtResource("14_2hnub")]
+position = Vector2(595.00006, 230)
+scale = Vector2(0.76, 0.76)
+next_scene_path = "res://b_room3.tscn"
+
 [node name="Charlotte" parent="." instance=ExtResource("14_edmed")]
 position = Vector2(599, 687)
 
@@ -129,3 +139,13 @@ zoom = Vector2(0.41, 0.41)
 polygon = PackedVector2Array(8, -3, -451, 0, -448, 1177, 498, 1181, 1178, 1177, 1178, -10, 685, 3, 689, 388, 1119, 384, 1123, 1136, 49, 1132, 49, 376, 505, 397, 505, 7)
 
 [node name="MenuPausa" parent="." instance=ExtResource("15_3w3t2")]
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(595.00006, 230)
+scale = Vector2(0.745, 0.745)
+script = ExtResource("17_edmed")
+next_scene_path = "res://b_room.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(-4.698059, 1196.6447)
+shape = SubResource("RectangleShape2D_03sc5")

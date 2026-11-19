@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://cuo0dlbffnhix"]
+[gd_scene load_steps=39 format=3 uid="uid://cuo0dlbffnhix"]
 
 [ext_resource type="Texture2D" uid="uid://bp820ce77piyp" path="res://Assets/room/Piso habitacion 1.png" id="1_pv558"]
 [ext_resource type="Texture2D" uid="uid://bh84i61jw3b3e" path="res://Assets/Habitación 4/BordeHabitacion_H4.png" id="2_prbda"]
@@ -30,6 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://c7oku64rkuxv" path="res://Assets/Habitacion3/Medalla_Recogible_H3.png" id="28_rfkpa"]
 [ext_resource type="PackedScene" uid="uid://c5al5wncvlm8c" path="res://charlotte.tscn" id="29_qxapj"]
 [ext_resource type="PackedScene" uid="uid://bfa6kgnx2npom" path="res://menu_pausa.tscn" id="30_prbda"]
+[ext_resource type="Script" uid="uid://b4mly0aq3lwt0" path="res://Scenes/SceneChange.gd" id="31_le72c"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bdww1"]
 size = Vector2(327.11865, 764.40674)
@@ -49,6 +50,9 @@ size = Vector2(179.66103, 235.59326)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bx1ai"]
 size = Vector2(637.2882, 257.62708)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yk50e"]
+size = Vector2(176, 20)
 
 [node name="Node2D" type="Node2D"]
 
@@ -219,3 +223,14 @@ position = Vector2(575, 582)
 zoom = Vector2(0.41, 0.41)
 
 [node name="MenuPausa" parent="." instance=ExtResource("30_prbda")]
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("31_le72c")
+next_scene_path = "res://b_room3.tscn"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(584, 1109)
+shape = SubResource("RectangleShape2D_yk50e")
+
+[node name="Room4Spawn" type="Marker2D" parent="Area2D"]
+position = Vector2(585, 1042)

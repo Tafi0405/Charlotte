@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://gfp80t48hci6"]
+[gd_scene load_steps=18 format=3 uid="uid://gfp80t48hci6"]
 
 [ext_resource type="Texture2D" uid="uid://bp820ce77piyp" path="res://Assets/room/Piso habitacion 1.png" id="1_dyo1i"]
 [ext_resource type="Texture2D" uid="uid://brve88j0lofx3" path="res://Assets/room/Borde habitacion.png" id="2_eo3v1"]
@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://c5al5wncvlm8c" path="res://charlotte.tscn" id="10_hm1kj"]
 [ext_resource type="PackedScene" uid="uid://bfa6kgnx2npom" path="res://menu_pausa.tscn" id="11_h1mai"]
 [ext_resource type="PackedScene" uid="uid://bu0ne7jfg7v3t" path="res://Armario.tscn" id="11_myi8q"]
+[ext_resource type="PackedScene" uid="uid://db8r632kdv2aj" path="res://Puerta.tscn" id="12_myi8q"]
+[ext_resource type="Script" uid="uid://b4mly0aq3lwt0" path="res://Scenes/SceneChange.gd" id="13_hm1kj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1mai"]
 size = Vector2(540.678, 344.0677)
@@ -20,6 +22,9 @@ size = Vector2(372.88135, 391.5595)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hm1kj"]
 size = Vector2(237.28815, 188.13559)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5tk0b"]
+size = Vector2(179, 31)
 
 [node name="Node2D" type="Node2D"]
 
@@ -78,6 +83,11 @@ shape = SubResource("RectangleShape2D_hm1kj")
 position = Vector2(615.2542, -754.2371)
 scale = Vector2(0.909, 0.909)
 
+[node name="Area2D" parent="." instance=ExtResource("12_myi8q")]
+position = Vector2(590, 225.99998)
+scale = Vector2(0.76, 0.76)
+next_scene_path = "res://b_room2.tscn"
+
 [node name="Charlotte" parent="." instance=ExtResource("10_hm1kj")]
 position = Vector2(588, 869)
 
@@ -91,3 +101,11 @@ zoom = Vector2(0.41, 0.41)
 polygon = PackedVector2Array(505, 2, -480, 0, -468, 1192, 493, 1186, 678, 1184, 1647, 1185, 1636, 10, 689, -12, 694, 51, 696, 393, 1111, 340, 1113, 1127, 676, 1133, 37, 1129, 45, 389, 492, 396, 494, 60, 717, 59)
 
 [node name="MenuPausa" parent="." instance=ExtResource("11_h1mai")]
+
+[node name="Area2D2" type="Area2D" parent="."]
+script = ExtResource("13_hm1kj")
+next_scene_path = "uid://bh7jln1ysoqeu"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(585.5, 1117.5)
+shape = SubResource("RectangleShape2D_5tk0b")
