@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://b1vy4itrhadwj"]
+[gd_scene format=3 uid="uid://b1vy4itrhadwj"]
 
 [ext_resource type="Texture2D" uid="uid://bp820ce77piyp" path="res://Assets/room/Piso habitacion 1.png" id="1_pkc0p"]
 [ext_resource type="Texture2D" uid="uid://dom6mql337ois" path="res://Assets/Habitacion2/Pared_H2.png" id="2_qnwgq"]
@@ -12,8 +12,9 @@
 [ext_resource type="Texture2D" uid="uid://bc7felf20dtb3" path="res://Assets/Habitacion2/ObjetosMesa_H2.png" id="9_sm4t0"]
 [ext_resource type="Texture2D" uid="uid://7porkwvmmjkq" path="res://Assets/Habitacion2/LataTirada_H2.png" id="10_3w3t2"]
 [ext_resource type="Texture2D" uid="uid://b34080s2yrsdk" path="res://Assets/Habitacion2/PerchaTirada_H2.png" id="12_agxf6"]
-[ext_resource type="PackedScene" uid="uid://bu0ne7jfg7v3t" path="res://Armario.tscn" id="13_2hnub"]
+[ext_resource type="PackedScene" uid="uid://bu0ne7jfg7v3t" path="res://armario.tscn" id="13_2hnub"]
 [ext_resource type="PackedScene" uid="uid://db8r632kdv2aj" path="res://Puerta.tscn" id="14_2hnub"]
+[ext_resource type="Texture2D" uid="uid://c5wcn187xmwt6" path="res://Assets/Habitacion3/Papel(para los dibujos en H1 y las notas de diario en H2).png" id="14_8me76"]
 [ext_resource type="PackedScene" uid="uid://c5al5wncvlm8c" path="res://charlotte.tscn" id="14_edmed"]
 [ext_resource type="PackedScene" uid="uid://bfa6kgnx2npom" path="res://menu_pausa.tscn" id="15_3w3t2"]
 [ext_resource type="Script" uid="uid://b4mly0aq3lwt0" path="res://Scenes/SceneChange.gd" id="17_edmed"]
@@ -34,118 +35,128 @@ size = Vector2(230.50848, 367.7966)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8me76"]
 size = Vector2(372.88135, 733.8983)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddicg"]
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03sc5"]
 size = Vector2(232.2148, 28.187958)
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D" type="Node2D" unique_id=1859869278]
 
-[node name="PisoHabitacion1" type="Sprite2D" parent="."]
+[node name="PisoHabitacion1" type="Sprite2D" parent="." unique_id=1622379975]
 position = Vector2(591, 762)
 scale = Vector2(0.59, 0.59)
 texture = ExtResource("1_pkc0p")
 
-[node name="ParedH2" type="Sprite2D" parent="PisoHabitacion1"]
+[node name="ParedH2" type="Sprite2D" parent="PisoHabitacion1" unique_id=2068257069]
 position = Vector2(-12, -904)
 texture = ExtResource("2_qnwgq")
 
-[node name="BordeHabitacion" type="Sprite2D" parent="PisoHabitacion1"]
+[node name="BordeHabitacion" type="Sprite2D" parent="PisoHabitacion1" unique_id=1660089633]
 position = Vector2(-1, -286)
 texture = ExtResource("3_jpql7")
 
-[node name="TachoBasuraH2" type="Sprite2D" parent="PisoHabitacion1"]
+[node name="TachoBasuraH2" type="Sprite2D" parent="PisoHabitacion1" unique_id=933293858]
 position = Vector2(541, 373)
 texture = ExtResource("4_1ya11")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/TachoBasuraH2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/TachoBasuraH2" unique_id=154286414]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/TachoBasuraH2/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/TachoBasuraH2/StaticBody2D" unique_id=739650838]
 position = Vector2(182.72891, -30.627127)
 shape = SubResource("CapsuleShape2D_3w3t2")
 
-[node name="SillaH2" type="Sprite2D" parent="PisoHabitacion1"]
+[node name="SillaH2" type="Sprite2D" parent="PisoHabitacion1" unique_id=468896007]
 position = Vector2(-560, 291)
 texture = ExtResource("5_jmvk2")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/SillaH2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/SillaH2" unique_id=1679707200]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/SillaH2/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/SillaH2/StaticBody2D" unique_id=419054651]
 position = Vector2(1.5253906, -26.593262)
 shape = SubResource("RectangleShape2D_agxf6")
 
-[node name="EscritorioH2" type="Sprite2D" parent="PisoHabitacion1"]
+[node name="EscritorioH2" type="Sprite2D" parent="PisoHabitacion1" unique_id=991012656]
 position = Vector2(-557, 484)
 texture = ExtResource("6_sm4t0")
 
-[node name="ObjetosMesaH2" type="Sprite2D" parent="PisoHabitacion1/EscritorioH2"]
+[node name="ObjetosMesaH2" type="Sprite2D" parent="PisoHabitacion1/EscritorioH2" unique_id=337960767]
 position = Vector2(-27.00003, -1.0001221)
 texture = ExtResource("9_sm4t0")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/EscritorioH2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/EscritorioH2" unique_id=630905291]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/EscritorioH2/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/EscritorioH2/StaticBody2D" unique_id=518578673]
 position = Vector2(-2.3220825, 3.288086)
 shape = SubResource("RectangleShape2D_2hnub")
 
-[node name="MesaDeNoche" type="Sprite2D" parent="PisoHabitacion1"]
+[node name="MesaDeNoche" type="Sprite2D" parent="PisoHabitacion1" unique_id=1874815928]
 position = Vector2(-371, -584)
 texture = ExtResource("7_3w3t2")
 
-[node name="LataNormalH2" type="Sprite2D" parent="PisoHabitacion1/MesaDeNoche"]
+[node name="LataNormalH2" type="Sprite2D" parent="PisoHabitacion1/MesaDeNoche" unique_id=1708885313]
 position = Vector2(-49, -127)
 texture = ExtResource("9_2hnub")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/MesaDeNoche"]
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/MesaDeNoche" unique_id=513485177]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/MesaDeNoche/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/MesaDeNoche/StaticBody2D" unique_id=493829756]
 position = Vector2(3.2033691, 3.491516)
 shape = SubResource("RectangleShape2D_edmed")
 
-[node name="CamaH2" type="Sprite2D" parent="PisoHabitacion1"]
+[node name="CamaH2" type="Sprite2D" parent="PisoHabitacion1" unique_id=1604090201]
 position = Vector2(-687, -550)
 texture = ExtResource("8_agxf6")
 
-[node name="PerchaTiradaH2" type="Sprite2D" parent="PisoHabitacion1/CamaH2"]
+[node name="PerchaTiradaH2" type="Sprite2D" parent="PisoHabitacion1/CamaH2" unique_id=78066499]
 position = Vector2(89, -70)
 texture = ExtResource("12_agxf6")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/CamaH2"]
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/CamaH2" unique_id=212239136]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/CamaH2/StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/CamaH2/StaticBody2D" unique_id=1895789831]
 position = Vector2(-14.694946, 27.118652)
 shape = SubResource("RectangleShape2D_8me76")
 
-[node name="Area2D" parent="PisoHabitacion1" instance=ExtResource("13_2hnub")]
+[node name="Area2D" parent="PisoHabitacion1" unique_id=1659127574 instance=ExtResource("13_2hnub")]
 position = Vector2(596, -706)
 
-[node name="LataTiradaH2" type="Sprite2D" parent="PisoHabitacion1"]
+[node name="LataTiradaH2" type="Sprite2D" parent="PisoHabitacion1" unique_id=1716691827]
 position = Vector2(408, 157.99988)
 texture = ExtResource("10_3w3t2")
 
-[node name="Area2D" parent="." instance=ExtResource("14_2hnub")]
+[node name="Sprite2D" type="Sprite2D" parent="PisoHabitacion1" unique_id=1916734230]
+texture = ExtResource("14_8me76")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/Sprite2D" unique_id=1497445274]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/Sprite2D/StaticBody2D" unique_id=1524621195]
+shape = SubResource("RectangleShape2D_ddicg")
+
+[node name="Area2D" parent="." unique_id=881867506 instance=ExtResource("14_2hnub")]
 position = Vector2(595.00006, 230)
 scale = Vector2(0.76, 0.76)
 next_scene_path = "res://b_room3.tscn"
 
-[node name="Charlotte" parent="." instance=ExtResource("14_edmed")]
+[node name="Charlotte" parent="." unique_id=1395865434 instance=ExtResource("14_edmed")]
 position = Vector2(599, 687)
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1166647158]
 position = Vector2(604, 594)
 zoom = Vector2(0.41, 0.41)
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1939996813]
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D" unique_id=743372]
 polygon = PackedVector2Array(8, -3, -451, 0, -448, 1177, 498, 1181, 1178, 1177, 1178, -10, 685, 3, 689, 388, 1119, 384, 1123, 1136, 49, 1132, 49, 376, 505, 397, 505, 7)
 
-[node name="MenuPausa" parent="." instance=ExtResource("15_3w3t2")]
+[node name="MenuPausa" parent="." unique_id=1742245680 instance=ExtResource("15_3w3t2")]
 
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="Area2D2" type="Area2D" parent="." unique_id=208778853]
 position = Vector2(595.00006, 230)
 scale = Vector2(0.745, 0.745)
 script = ExtResource("17_edmed")
 next_scene_path = "res://b_room.tscn"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=116327455]
 position = Vector2(-4.698059, 1196.6447)
 shape = SubResource("RectangleShape2D_03sc5")
