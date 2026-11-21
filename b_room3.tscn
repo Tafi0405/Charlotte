@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cfe6kcl7aogd"]
 
 [ext_resource type="Texture2D" uid="uid://bp820ce77piyp" path="res://Assets/room/Piso habitacion 1.png" id="1_464l0"]
-[ext_resource type="Texture2D" uid="uid://c5wcn187xmwt6" path="res://Assets/Habitacion3/Papel(para los dibujos en H1 y las notas de diario en H2).png" id="2_pm0kf"]
+[ext_resource type="PackedScene" uid="uid://bbloj8u2nd5su" path="res://area_diario_3.tscn" id="2_pm0kf"]
 [ext_resource type="Texture2D" uid="uid://2pslm141vm8u" path="res://Assets/Habitacion3/ParedHabitacion_H3.png" id="2_sf736"]
 [ext_resource type="Texture2D" uid="uid://brve88j0lofx3" path="res://Assets/room/Borde habitacion.png" id="3_6r20l"]
 [ext_resource type="Texture2D" uid="uid://de08igyr6w423" path="res://Assets/Habitacion3/Poster_Chilipeppers_H3.png" id="3_axhw3"]
@@ -34,9 +34,6 @@
 [ext_resource type="PackedScene" uid="uid://bfa6kgnx2npom" path="res://menu_pausa.tscn" id="30_lacmv"]
 [ext_resource type="Script" uid="uid://b4mly0aq3lwt0" path="res://Scenes/SceneChange.gd" id="32_pm0kf"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddicg"]
-size = Vector2(161.83855, 125.39857)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wu8wq"]
 size = Vector2(327.11865, 764.40674)
 
@@ -66,18 +63,9 @@ position = Vector2(587, 750)
 scale = Vector2(0.59, 0.59)
 texture = ExtResource("1_464l0")
 
-[node name="Hoja de papel" type="Sprite2D" parent="PisoHabitacion1" unique_id=1091418411]
-position = Vector2(238.98328, 284.75)
-rotation = 1.5707964
-scale = Vector2(0.84830505, 0.79745764)
-texture = ExtResource("2_pm0kf")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/Hoja de papel" unique_id=48133811]
-position = Vector2(-452.54236, 91.52539)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/Hoja de papel/StaticBody2D" unique_id=1684306285]
-position = Vector2(-107.89758, -139.3468)
-shape = SubResource("RectangleShape2D_ddicg")
+[node name="AreaDiario3" parent="PisoHabitacion1" unique_id=390869361 instance=ExtResource("2_pm0kf")]
+position = Vector2(-391.52545, -584.74585)
+scale = Vector2(1.6949153, 1.6949153)
 
 [node name="ParedHabitacionH3" type="Sprite2D" parent="PisoHabitacion1" unique_id=1619199378]
 position = Vector2(-3, -893)

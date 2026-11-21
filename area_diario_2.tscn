@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://cm1td8c7enarp"]
+
+[ext_resource type="Script" uid="uid://d3eo4pix0x8lc" path="res://area_diario_2.gd" id="1_nkafb"]
+[ext_resource type="Texture2D" uid="uid://c5wcn187xmwt6" path="res://Assets/Habitacion3/Papel(para los dibujos en H1 y las notas de diario en H2).png" id="2_3j3bc"]
+[ext_resource type="Texture2D" uid="uid://pqwv1k1pt2i7" path="res://Assets/Habitacion2/HojaDiario2_H2.drawio.png" id="3_kx5ik"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_otjec"]
+size = Vector2(248, 210)
+
+[node name="AreaDiario2" type="Area2D" unique_id=1258561708]
+script = ExtResource("1_nkafb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1253246783]
+position = Vector2(392, 222)
+shape = SubResource("RectangleShape2D_otjec")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=840685958]
+position = Vector2(372.00006, 520)
+rotation = 1.5707964
+scale = Vector2(0.5055, 0.4555)
+texture = ExtResource("2_3j3bc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=470224399]
+
+[node name="TextureRect" type="TextureRect" parent="CanvasLayer" unique_id=1930534541]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_kx5ik")
+expand_mode = 1
+stretch_mode = 3
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]

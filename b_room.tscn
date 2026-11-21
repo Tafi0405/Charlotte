@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://gfp80t48hci6"]
 
 [ext_resource type="Texture2D" uid="uid://bp820ce77piyp" path="res://Assets/room/Piso habitacion 1.png" id="1_dyo1i"]
-[ext_resource type="Texture2D" uid="uid://c5wcn187xmwt6" path="res://Assets/Habitacion3/Papel(para los dibujos en H1 y las notas de diario en H2).png" id="2_5tk0b"]
 [ext_resource type="Texture2D" uid="uid://brve88j0lofx3" path="res://Assets/room/Borde habitacion.png" id="2_eo3v1"]
+[ext_resource type="PackedScene" uid="uid://3xs3f1iv7vqx" path="res://area_dibujo_2.tscn" id="2_nd6i1"]
 [ext_resource type="Texture2D" uid="uid://d2fsh8o4q2lyt" path="res://Assets/room/Pared Habitacion1.png" id="3_0nbvq"]
 [ext_resource type="Texture2D" uid="uid://bou7tw7ph6h0s" path="res://Assets/room/Caja de juguetes.png" id="5_h1mai"]
 [ext_resource type="Texture2D" uid="uid://ct8eabhx1avmm" path="res://Assets/room/Cama1.png" id="6_myi8q"]
@@ -14,6 +14,9 @@
 [ext_resource type="PackedScene" uid="uid://bu0ne7jfg7v3t" path="res://armario.tscn" id="11_myi8q"]
 [ext_resource type="PackedScene" uid="uid://db8r632kdv2aj" path="res://Puerta.tscn" id="12_myi8q"]
 [ext_resource type="Script" uid="uid://b4mly0aq3lwt0" path="res://Scenes/SceneChange.gd" id="13_hm1kj"]
+[ext_resource type="PackedScene" uid="uid://d2jkaxxkqyw85" path="res://area_dibujo_3.tscn" id="13_rpkj0"]
+[ext_resource type="PackedScene" uid="uid://dja5q4o6armqo" path="res://Dibujo_1.tscn" id="15_nd6i1"]
+[ext_resource type="PackedScene" uid="uid://cl4n87i4gb5k3" path="res://area_diario_1.tscn" id="17_r7et2"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h1mai"]
 size = Vector2(540.678, 344.0677)
@@ -34,14 +37,19 @@ position = Vector2(587, 766.9999)
 scale = Vector2(0.59, 0.59)
 texture = ExtResource("1_dyo1i")
 
-[node name="Sprite2D" type="Sprite2D" parent="PisoHabitacion1" unique_id=1748293116]
-position = Vector2(1508.4746, -674.5761)
+[node name="AreaDibujo2" parent="PisoHabitacion1" unique_id=1333927720 instance=ExtResource("2_nd6i1")]
+position = Vector2(-1093.2203, -776.27106)
 scale = Vector2(1.6949153, 1.6949153)
-texture = ExtResource("2_5tk0b")
+
+[node name="AreaDiario1" parent="PisoHabitacion1" unique_id=1601446465 instance=ExtResource("17_r7et2")]
+position = Vector2(-1181.3561, 125.42389)
 
 [node name="BordeHabitacion" type="Sprite2D" parent="PisoHabitacion1" unique_id=198534843]
 position = Vector2(-3, -293)
 texture = ExtResource("2_eo3v1")
+
+[node name="AreaDibujo3" parent="PisoHabitacion1" unique_id=1651366881 instance=ExtResource("13_rpkj0")]
+position = Vector2(150.84729, -930.5083)
 
 [node name="ParedHabitacion1" type="Sprite2D" parent="PisoHabitacion1" unique_id=1697212375]
 position = Vector2(-4, -904)
@@ -115,3 +123,6 @@ next_scene_path = "uid://bh7jln1ysoqeu"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=1540690915]
 position = Vector2(585.5, 1117.5)
 shape = SubResource("RectangleShape2D_5tk0b")
+
+[node name="Area2D3" parent="." unique_id=531890779 instance=ExtResource("15_nd6i1")]
+position = Vector2(5, 717)

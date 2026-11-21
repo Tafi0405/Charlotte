@@ -14,10 +14,10 @@
 [ext_resource type="Texture2D" uid="uid://b34080s2yrsdk" path="res://Assets/Habitacion2/PerchaTirada_H2.png" id="12_agxf6"]
 [ext_resource type="PackedScene" uid="uid://bu0ne7jfg7v3t" path="res://armario.tscn" id="13_2hnub"]
 [ext_resource type="PackedScene" uid="uid://db8r632kdv2aj" path="res://Puerta.tscn" id="14_2hnub"]
-[ext_resource type="Texture2D" uid="uid://c5wcn187xmwt6" path="res://Assets/Habitacion3/Papel(para los dibujos en H1 y las notas de diario en H2).png" id="14_8me76"]
 [ext_resource type="PackedScene" uid="uid://c5al5wncvlm8c" path="res://charlotte.tscn" id="14_edmed"]
 [ext_resource type="PackedScene" uid="uid://bfa6kgnx2npom" path="res://menu_pausa.tscn" id="15_3w3t2"]
 [ext_resource type="Script" uid="uid://b4mly0aq3lwt0" path="res://Scenes/SceneChange.gd" id="17_edmed"]
+[ext_resource type="PackedScene" uid="uid://cm1td8c7enarp" path="res://area_diario_2.tscn" id="18_edmed"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_3w3t2"]
 radius = 76.27124
@@ -35,15 +35,13 @@ size = Vector2(230.50848, 367.7966)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8me76"]
 size = Vector2(372.88135, 733.8983)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ddicg"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_03sc5"]
 size = Vector2(232.2148, 28.187958)
 
 [node name="Node2D" type="Node2D" unique_id=1859869278]
 
 [node name="PisoHabitacion1" type="Sprite2D" parent="." unique_id=1622379975]
-position = Vector2(591, 762)
+position = Vector2(591, 761)
 scale = Vector2(0.59, 0.59)
 texture = ExtResource("1_pkc0p")
 
@@ -54,6 +52,10 @@ texture = ExtResource("2_qnwgq")
 [node name="BordeHabitacion" type="Sprite2D" parent="PisoHabitacion1" unique_id=1660089633]
 position = Vector2(-1, -286)
 texture = ExtResource("3_jpql7")
+
+[node name="AreaDiario2" parent="PisoHabitacion1" unique_id=1258561708 instance=ExtResource("18_edmed")]
+position = Vector2(54.237305, -144.06787)
+scale = Vector2(1.6949153, 1.6949153)
 
 [node name="TachoBasuraH2" type="Sprite2D" parent="PisoHabitacion1" unique_id=933293858]
 position = Vector2(541, 373)
@@ -123,14 +125,6 @@ position = Vector2(596, -706)
 [node name="LataTiradaH2" type="Sprite2D" parent="PisoHabitacion1" unique_id=1716691827]
 position = Vector2(408, 157.99988)
 texture = ExtResource("10_3w3t2")
-
-[node name="Sprite2D" type="Sprite2D" parent="PisoHabitacion1" unique_id=1916734230]
-texture = ExtResource("14_8me76")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="PisoHabitacion1/Sprite2D" unique_id=1497445274]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PisoHabitacion1/Sprite2D/StaticBody2D" unique_id=1524621195]
-shape = SubResource("RectangleShape2D_ddicg")
 
 [node name="Area2D" parent="." unique_id=881867506 instance=ExtResource("14_2hnub")]
 position = Vector2(595.00006, 230)
